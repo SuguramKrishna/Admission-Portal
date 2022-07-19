@@ -1,0 +1,205 @@
+<section class="main-div" id="into">
+    <div class="intro-div">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo_div">
+                <%= image_tag('fw_logo.png', {class: 'fw_logo' }) %>
+                    <a href="/admissions/index" class="logo">STS Software Academy</a>
+            </div>
+
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <!-- NAVIGATION MENUS -->
+                <div class="menu"> 
+                    <li><a href="/admissions/index">Home</a></li>
+                    <li><a href="/admission/staff">Staff</a></li>
+                    <li class="/admission/admission"><a href="/">Admission</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                            <li><a href="/">Apply Now </a></li>
+                            <li><a href="/">Check Status</a></li>
+                        </ul>
+                    </li>
+                    <li class="gallery">
+                        <a href="/admission/gallery">Gallery</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                            <li><a href="/">Batch 1 </a></li>
+                            <li><a href="/">Batch 2</a></li>
+                            <li><a href="/">Batch 3</a></li>
+                            <li><a href="/">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li class="faq">
+                        <a href="/admission/faq">FAQ</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                            <li><a href="/">Terms & Conditions</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/admission/contact">Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="intro-text">
+            <h1 class="main-heading">Freshworks Software Academy</h1>
+            <p class="sub-heading">We Teach youngsters about the Software Skills with Life Skills</p>
+            <a href="#about"><button class="read-btn">Read More</button></a>
+        </div>
+
+        <div class="bg-image">
+            <%= image_tag('shyam-anna.JPG',{class: 'bg_img' }) %>
+        </div>
+    </div>
+</section>
+
+<section class="wht-frs" id="about">
+    <br><br>
+    <div class="abt-container">
+        <h2 class="abt-h2">Who and Why we are?</h2>
+        <p class="sub-text">
+            Freshworks Software Academy (FWSA) is a programme exclusively designed for aspirants of a career in
+            technology, who do not have the means to afford formal education after high school
+        </p>
+    </div>
+</section>
+
+<section class="wht-card" id="card">
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-laptop"></i>
+            <h3>Laptop with High speed Internet</h3>
+            <p>
+                We provide laptops with high speed Internet to the students for making their learning more efficient
+                with lots of hands on practice both in the campus and home so that they can get the full essences of
+                what they are learning.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>Stipened Training</h3>
+            <p>
+                Do you know? that this program is a Zero Cost Program ? Yes, This is a Zero Cost Program in which you
+                don't have to pay any fee for the program instead we provide a monthly stipend for the student during
+                the entire period of the program.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>Life Skill Training</h3>
+            <p>
+                The studnets are thought about how to develop the skills like decision making, think critically and
+                creatively, communicate effectively,build healthy relationships, empathize with others, and to
+                manage their lives in a healthy and productive manner.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-keyboard"></i>
+            <h3>Hands On Practice</h3>
+            <p>
+                As per the quote "Practice Makes A Man Perfect" we give importance to the practical workout for the
+                students we give problem solvings and projects for the student which will be done practically so that
+                they can get much more deep knolwedge about the thing they are learning.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h3>Individual Care</h3>
+            <p>
+                The students are analaysed and guided individually based on their interest in studies and they are given
+                chance in that to excellence in their carreer. The students are provided with free food during the
+                traing
+                period and they get an comfortable environment to work.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>IT Exposure while Learning</h3>
+            <p>
+                We provide the students an experience of how an IT company works during the period of the training they
+                get chance to interact with the people who works in Freshworks and they get an exposure of how to work
+                in a team with the help of the group projects.
+            </p>
+        </div>
+    </div>
+
+
+    </div>
+</section>
+
+<section class="fw-journey" id="journey">
+    <div class="jr-container">
+        <h2 class="jr-abt-h2">JOURNEY</h2>
+        <div class="row">
+            <div class="column">
+                <%= image_tag('bud.jpg',{class: 'bg_img' }) %>
+                    <p class="upper-p">Day 0</p>
+                    <p class="lower-p">BUD</p>
+                    <p class="summary">
+                        Students start their journey as a bud in the DAY 0 of the program
+                    </p>
+            </div>
+            <div class="column">
+                <%= image_tag('blossom.jpg',{class: 'bg_img' }) %>
+                    <p class="upper-p">Day 300</p>
+                    <p class="lower-p">BLOSSOM</p>
+                    <p class="summary">
+                        We call the internship period of the program as BLOSSOM because in this duration of the program
+                        the studnets lerans many new things and they will work with the IT team of the company
+                    </p>
+            </div>
+            <div class="column">
+                <%= image_tag('garden.jpg',{class: 'bg_img' }) %>
+                    <p class="upper-p">Day 600</p>
+                    <p class="lower-p">GARDEN</p>
+                    <p class="summary">
+                        This is the final state of the program in which the students enter into the full time employment
+                    </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="footer-box-container">
+      <div class="box">
+        <p>
+            <%= image_tag('fw_bud.png',{class: 'footer_img' }) %>
+         Freshworks
+        </p>
+      </div>
+      <div class="box">
+        <h3>Our Products</h3>
+        <a href="#">Freshdesk</a>
+        <a href="#">Freshchat</a>
+        <a href="#">Freshsales</a>
+        <a href="#">Freshmarketer</a>
+        <a href="#">Freshservice</a>
+        <a href="#">Freshteam</a>
+      </div>
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#book">Staff</a>
+        <a href="#packages">Admission</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#review">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="box">
+        <h3>Follow us</h3>
+        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+      </div>
+    </div>
+    <a href="https://www.linkedin.com/in/suguram-k-916197216/">
+      <h1 class="credit">
+        Created by <span> Freshworks Inc </span> | all rights reserved!
+      </h1>
+    </a>
+  </section>
