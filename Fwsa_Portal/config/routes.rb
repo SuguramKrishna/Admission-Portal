@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'parent_details/parent'
   # get 'admissions/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -15,5 +16,5 @@ Rails.application.routes.draw do
 
   #Basic Details Route
   get 'basic_details/basic'
-  match '/basic', :to => 'basic_details#create', :via => :post
+  match 'basic_details/create', :to => 'basic_details#create', :via => :post
 end

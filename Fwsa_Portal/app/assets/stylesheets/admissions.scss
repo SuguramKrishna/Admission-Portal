@@ -1,4 +1,4 @@
-* {
+~* {
   margin: 0%;
   padding: 0%;
 }
@@ -43,7 +43,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 a {
-  color: #f7f7f7;
+  color: #f7f7f7 ,; 
 }
 
 //logo
@@ -51,14 +51,14 @@ a {
 .logo_div {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 30%;
-  width: 40%;
+
 }
 
 .logo {
   text-transform: uppercase;
   text-decoration: none;
+  margin: 0%;
 }
 
 .fw_logo {
@@ -118,9 +118,7 @@ a {
   position: relative;
 }
 
-.faq:hover .dropdown {
-  display: block;
-}
+
 
 .admission {
   position: relative;

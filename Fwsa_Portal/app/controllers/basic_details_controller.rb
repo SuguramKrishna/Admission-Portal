@@ -1,7 +1,7 @@
 class BasicDetailsController < ApplicationController
-  # def basic_detail
-  #   @basic_details = BasicDetail.all
-  # end
+  def basic_detail
+    # @basic_details = BasicDetail.all
+  end
 
   # def new
       
@@ -13,7 +13,7 @@ class BasicDetailsController < ApplicationController
       # @basic_details=BasicDetail.all
       render plain: "Success"
     else
-      render plain: "Fail" 
+      flash[:error] = @basic_detail.errors.full_messages.join(",")
     end
   end
 
