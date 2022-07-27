@@ -16,7 +16,7 @@
   width: 75%;
   height: 100%;
   padding: 2%;
-  margin-top: 5%;
+  margin-top: 7%;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -54,7 +54,7 @@
 //Button
 
 .form-btn {
-  margin-left: 70%;
+  margin-left: 79%;
   margin-top: 2%;
   width: 200px;
   outline: 2px solid #63bfbf;
@@ -78,6 +78,8 @@
 
 // Input Box,  and Select Box
 
+
+
 .form-container input {
   margin: 2%;
   width: 200px;
@@ -87,35 +89,39 @@
 
 .form-container input[type="date"] {
   color: #63bfbf;
-  text-align: center;
+  // text-align: center;
 }
+
+
 
 .form-container input:focus {
-  outline: 2px solid #63bfbf;
-  transition: 0.4s;
-  border: none;
+  border-bottom: 3px solid #63bfbf;
+  transition: 0.2s;
+  outline: none;
 }
 
-.form-container select {
-  text-align: center;
-}
+// .form-container select {
+//   text-align: center;
+// }
 .form-container select,
 textarea {
   margin: 2%;
   width: 200px;
   border: none;
-  border-bottom: 2px solid #63bfbf;
+  border-bottom: 2px solid #b4b4b4;
   font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
 }
 
 .form-container select:focus {
-  outline: 2px solid #63bfbf;
-  transition: 0.4s;
+  border-bottom: 2px solid #63bfbf;
+  transition: 0.2s;
+  outline: none;
 }
 
 .form-container textarea:focus {
-  outline: 2px solid #63bfbf;
-  transition: 0.4s;
+  border-bottom: 2px solid #63bfbf;
+  transition: 0.2s;
+  outline: none;
 }
 
 // required star
@@ -128,7 +134,7 @@ textarea {
 //placeholder
 
 ::placeholder {
-  text-align: center;
+  text-align: left;
 }
 
 //hr line

@@ -20,7 +20,7 @@ class BasicDetailsController < ApplicationController
   private
 
   def basic_params
-      params.require(:basic_detail).permit(:student_name,:dob,:gender,:address,:primary_number,:alternate_number,:email_id,:parent_name,:parent_relation)
+      params.require(:basic_detail).permit(:student_name,:dob,:gender,:address,:primary_number,:alternate_number,:email_id,:parent_name,:parent_relation,:declaration)
   end
 
 
