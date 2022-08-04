@@ -94,11 +94,9 @@
 
 
 <div class="form-main-container">
-
     <div class="form-container">
         <h3 class="form-heading">Freshworks Software Academy <span class="h1-span">Application 2023</span></h3>
         <form action="/basic_details/create" method="post">
-
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <h4 class="eligibility-heading">Eligibility Criteria</h4>
 
@@ -126,7 +124,7 @@
                     <td>
                         <p class="input-name">Name of the Student<span class="required-star">*</span></p>
                     </td>
-                    <td><input type="text" name="basic_detail[student_name]" placeholder="Studnet Name" autofocus
+                    <td><input type="text" name="basic_detail[student_name]" placeholder="Student Name" autofocus
                             required>
                     </td>
                 </tr>
@@ -134,9 +132,9 @@
                 <tr>
                     <td>
                         <p class="input-name">Date Of Birth<span class="required-star">*</span></p>
-                        <p class="input-extra-detail">(Date Of Birth should be between 01 Jan 2003 - 31 Dec 2006)</p>
+                        <p class="input-extra-detail">(Date Of Birth should be between 01 Jan 2003 - 31 Dec 2005)</p>
                     </td>
-                    <td><input type="date" name="basic_detail[dob]" placeholder="DD-MM-YYYY" required>
+                    <td><input type="date" name="basic_detail[dob]" placeholder="DD-MM-YYYY" required min="2003-01-01" max="2005-12-31">
                     </td>
                 </tr>
                 <tr>

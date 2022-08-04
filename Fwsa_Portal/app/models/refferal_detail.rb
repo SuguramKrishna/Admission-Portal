@@ -1,0 +1,2 @@
+class RefferalDetail < ApplicationRecord
+end

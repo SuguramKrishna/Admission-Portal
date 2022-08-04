@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_093003) do
+ActiveRecord::Schema.define(version: 2022_08_04_131157) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,62 @@ ActiveRecord::Schema.define(version: 2022_07_27_093003) do
     t.string "declaration", default: "yes"
   end
 
+  create_table "educational_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "current_class"
+    t.string "sslc_school_name"
+    t.string "sslc_school_type"
+    t.bigint "sslc_completion"
+    t.bigint "sslc_maths_score"
+    t.bigint "sslc_english_score"
+    t.bigint "sslc_total_score"
+    t.string "sslc_school_medium"
+    t.string "higher_education_name"
+    t.string "higher_education_type"
+    t.bigint "higher_education_completion"
+    t.string "higher_education_maths_score"
+    t.string "higher_education_english_score"
+    t.string "higher_education_computer_score"
+    t.string "higher_education_total_score"
+    t.string "higher_education_diploma_score"
+    t.string "higher_education_medium"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basic_details_id"
+    t.index ["basic_details_id"], name: "index_educational_details_on_basic_details_id"
+  end
+
+  create_table "family_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "parent_detail"
+    t.string "mother_qualification"
+    t.string "father_qualification"
+    t.string "mother_occupation"
+    t.string "mother_income"
+    t.string "father_occupation"
+    t.string "father_income"
+    t.string "other_income"
+    t.bigint "electricity_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basic_details_id"
+    t.index ["basic_details_id"], name: "index_family_details_on_basic_details_id"
+  end
+
+  create_table "refferal_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "approach"
+    t.string "refferal_person_details"
+    t.string "refferal_person_name"
+    t.bigint "refferal_person_number"
+    t.string "refferal_person_relationship"
+    t.string "additional_information"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basic_details_id"
+    t.index ["basic_details_id"], name: "index_refferal_details_on_basic_details_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "educational_details", "basic_details", column: "basic_details_id"
+  add_foreign_key "family_details", "basic_details", column: "basic_details_id"
+  add_foreign_key "refferal_details", "basic_details", column: "basic_details_id"
 end

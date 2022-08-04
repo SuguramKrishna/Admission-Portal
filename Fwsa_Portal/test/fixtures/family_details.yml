@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent_detail: MyString
+  mother_qualification: MyString
+  father_qualification: MyString
+  mother_occupation: MyString
+  mother_income: MyString
+  father_occupation: MyString
+  father_income: MyString
+  other_income_bigint: MyString
+  electricity_amount: 
+
+two:
+  parent_detail: MyString
+  mother_qualification: MyString
+  father_qualification: MyString
+  mother_occupation: MyString
+  mother_income: MyString
+  father_occupation: MyString
+  father_income: MyString
+  other_income_bigint: MyString
+  electricity_amount: 

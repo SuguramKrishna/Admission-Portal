@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  approach: MyString
+  refferal_person_details: MyString
+  refferal_person_name: MyString
+  refferal_person_number: 
+  refferal_person_relationship: MyString
+  additional_information: MyString
+
+two:
+  approach: MyString
+  refferal_person_details: MyString
+  refferal_person_name: MyString
+  refferal_person_number: 
+  refferal_person_relationship: MyString
+  additional_information: MyString

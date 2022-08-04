@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_no: 
+  current_class: MyString
+  10th_school_name: MyString
+  10th_school_type: MyString
+  10th_completion: 
+  10th_maths_score: 
+  10th_english_score: 
+  10th_total_score: 
+  10th_school_medium: MyString
+  higher_education_name: MyString
+  higher_education_type: MyString
+  higher_education_completion: 
+  higher_education_maths_score: MyString
+  higher_education_english_score: MyString
+  higher_education_computer_score: MyString
+  higher_education_total_score: MyString
+  higher_education_diploma_score: MyString
+  higher_education_medium: MyString
+
+two:
+  app_no: 
+  current_class: MyString
+  10th_school_name: MyString
+  10th_school_type: MyString
+  10th_completion: 
+  10th_maths_score: 
+  10th_english_score: 
+  10th_total_score: 
+  10th_school_medium: MyString
+  higher_education_name: MyString
+  higher_education_type: MyString
+  higher_education_completion: 
+  higher_education_maths_score: MyString
+  higher_education_english_score: MyString
+  higher_education_computer_score: MyString
+  higher_education_total_score: MyString
+  higher_education_diploma_score: MyString
+  higher_education_medium: MyString

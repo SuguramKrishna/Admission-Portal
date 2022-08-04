@@ -10,7 +10,7 @@
         <div class="menu">
             <li><a href="/admissions/index">Home</a></li>
             <li><a href="/admission/staff">Staff</a></li>
-            <li><a href="/basic_details/basic">Admission</a>
+            <li><a href="/educational_details/educational">Admission</a>
                 <ul class="dropdown">
                     <li><a href="/">Apply Now </a></li>
                     <li><a href="/">Check Status</a></li>
@@ -37,10 +37,10 @@
 <div class="form-main-container">
 
     <div class="form-container">
-        <form action="/basic_details/create" method="post">
+        <form action="/educational_details/create" method="post">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <h3 class="h1-span">Educational Detail Form</h3>
-            <hr>
+            <hr>    
             <% if flash[:error]%>
                 <p class="flash-error">
                     <%= flash[:error]%>
@@ -52,7 +52,7 @@
                                 <p class="input-name">Current Class<span class="required-star">*</span></p>
                             </td>
                             <td>
-                                <select name="basic_detail[gender]" required placeholder="-Select Your Gender-">
+                                <select name="educational_detail[current_class]" required placeholder="-Select Your Gender-">
                                     <option value="" disabled selected hidden>-Select-</option>
                                     <option value="Currently Studying 12th">
                                         <p class="input-option">Currently Studying 12th</p>
@@ -81,17 +81,17 @@
 
                         <tr>
                             <td>
-                                <p class="input-name">10th Standard:School Name<span class="required-star">*</span></p>
+                                <p class="input-name">10th Standard: School Name<span class="required-star">*</span></p>
                             </td>
-                            <td><input type="text" name="basic_detail[dob]" placeholder="School Name" required>
+                            <td><input type="text" name="educational_detail[sslc_school_name]" placeholder="School Name" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">10th Standard:School Type<span class="required-star">*</span></p>
+                                <p class="input-name">10th Standard: School Type<span class="required-star">*</span></p>
                             </td>
                             <td>
-                                <select name="basic_detail[gender]" required placeholder="-Select Your Gender-">
+                                <select name="educational_detail[sslc_school_type]" required placeholder="-Select Your Gender-">
                                     <option value="" disabled selected hidden>-Select-</option>
                                     <option value="Government">
                                         <p class="input-option">Government</p>
@@ -110,56 +110,193 @@
                                 <p class="input-name">10th Year of Completion <span class="required-star">*</span></p>
                             </td>
                             <td>
-                                <input type="text" name="basic_detail[dob]" placeholder="Completion Year" required>
+                                <input type="text" name="educational_detail[sslc_completion]" placeholder="Completion Year" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">10th Standard : Math Score (mention 'Your Marks'/'Total' - example: 90/100)<span class="required-star">*</span>  Mention 'N/A' if not applicable</p>
+                                <p class="input-name">10th Standard: Math Score (mention 'Your Marks'/'Total' - example:
+                                    90/100)<span class="required-star">* <span class="mention-span">Mention 'N/A' if not
+                                            applicable</span></p>
                             </td>
                             <td>
-                                <textarea name="basic_detail[address]" placeholder="Math Score" required></textarea>
+                                <input type="text" name="educational_detail[sslc_maths_score]" placeholder="Math Score" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">Email-Id<span class="required-star">*</span></p>
+                                <p class="input-name">10th Standard: English Score (mention 'Your Marks'/'Total' -
+                                    example: 90/100) <span class="required-star">*</span> <span
+                                        class="mention-span">Mention 'N/A' if not applicable</span></p>
                             </td>
-                            <td><input type="email" name="basic_detail[email_id]" placeholder="Email-Id" required></td>
+                            <td>
+                                <input type="text" name="educational_detail[sslc_english_score]" placeholder="English Score" required>
+                            </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">Whatsapp Number<span class="required-star">*</span></p>
+                                <p class="input-name">10th Standard: Total Score (mention 'Your Marks'/'Total' -
+                                    example: 450/500)
+                                    <span class="required-star">*</span>
+                                </p>
                             </td>
-                            <td><input type="number" name="basic_detail[primary_number]" placeholder="Primary Number"
+                            <td>
+                                <input type="text" name="educational_detail[sslc_total_score]" placeholder="Total Score" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">10th Standard: Medium of Instruction<span
+                                        class="required-star">*</span></p>
+                            </td>
+                            <td>
+                                <select name="educational_detail[sslc_school_medium]" required placeholder="-Select Your Gender-">
+                                    <option value="" disabled selected hidden>-Select-</option>
+                                    <option value="Tamil">
+                                        <p class="input-option">Tamil</p>
+                                    </option>
+                                    <option value="English">
+                                        <p class="input-option">English</p>
+                                    </option>
+                                    <option value="Other">
+                                        <p class="input-option">Other</p>
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">12th Standard/Diploma: School/Institution Name <span
+                                        class="required-star">*</span></p>
+                            </td>
+                            <td><input type="text" name="educational_detail[higher_education_name]" placeholder="School/Institution Name"
                                     required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">Alternate Number<span class="required-star">*</span></p>
+                                <p class="input-name">12th Standard/Diploma: School/Institution Type<span
+                                        class="required-star">*</span></p>
                             </td>
-                            <td><input type="number" name="basic_detail[alternate_number]"
-                                    placeholder="Alternate Number" required>
+                            <td>
+                                <select name="educational_detail[higher_education_type]" required placeholder="-Select Your Gender-">
+                                    <option value="" disabled selected hidden>-Select-</option>
+                                    <option value="Government">
+                                        <p class="input-option">Government</p>
+                                    </option>
+                                    <option value="Government-Aided">
+                                        <p class="input-option">Government-Aided</p>
+                                    </option>
+                                    <option value="Private">
+                                        <p class="input-option">Private</p>
+                                    </option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">Parent Name<span class="required-star">*</span></p>
+                                <p class="input-name">12th/Diploma Year of Completion <span
+                                        class="required-star">*</span></p>
                             </td>
-                            <td> <input type="text" name="basic_detail[parent_name]" placeholder="Parent Name" required>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_completion]" placeholder="Completion Year" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="input-name">Parent Relation<span class="required-star">*</span></p>
+                                <p class="input-name">12th Standard : Math Score (mention 'Your Marks'/'Total' -
+                                    example: 90/100)<span class="required-star">*</span><span class="mention-span"> In
+                                        case of 12th other streams/Diploma, mention 'N/A'</span></p>
                             </td>
-                            <td><input type="text" name="basic_detail[parent_relation]" placeholder="Parent Relation"
-                                    required>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_maths_score]" placeholder="Math Score" required>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">12th Standard : English Score (mention 'Your Marks'/'Total' -
+                                    example: 90/100) <span class="required-star">*</span><span class="mention-span"> In
+                                        case of Tamil Medium/Diploma, mention 'N/A'</span></p>
+                            </td>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_english_score]" placeholder="English Score" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">12th Standard : Computer Science Score (mention 'Your
+                                    Marks'/'Total' - example: 90/100) <span class="required-star">*</span><span
+                                        class="mention-span"> In case of 12th other streams or Diploma, mention
+                                        'N/A'</span></p>
+                            </td>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_computer_score]" placeholder="Computer Score" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">12th Standard : Total Score (mention 'Your Marks'/'Total' -
+                                    example: 550/600)
+                                    <span class="required-star">*</span><span class="mention-span"> In case of or
+                                        Diploma, mention 'N/A'</span>
+                                </p>
+                            </td>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_total_score]" placeholder="Total Score" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">Diploma : Total Score
+                                    <span class="required-star">*</span><span class="mention-span"> In case of 12th,
+                                        mention 'N/A'</span>
+                                </p>
+                            </td>
+                            <td>
+                                <input type="text" name="educational_detail[higher_education_diploma_score]" placeholder="Total Score" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="input-name">12th/Diploma: Medium of Instruction<span
+                                        class="required-star">*</span></p>
+                            </td>
+                            <td>
+                                <select name="educational_detail[higher_education_medium]" required placeholder="-Select Your Gender-">
+                                    <option value="" disabled selected hidden>-Select-</option>
+                                    <option value="Tamil">
+                                        <p class="input-option">Tamil</p>
+                                    </option>
+                                    <option value="English">
+                                        <p class="input-option">English</p>
+                                    </option>
+                                    <option value="Other">
+                                        <p class="input-option">Other</p>
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td>
+                                <p class="input-name">Upload any extra curricular certificates or creative work of yours
+                                    <span class="required-star">*</span><span class="mention-p"> Example:
+                                        Athletics/Drawing</span></p>
+                            </td>
+                            <td>
+                                <label class="custom-file-upload">
+                                    <input type="file" />
+                                    <p class="file-text"><span><i class="fa-solid fa-upload"></i> </span> Select File To Upload
+                                    </span>
+                                </label>
+                            </td>
+                        </tr> -->
                     </table>
-                    <button class="form-btn">Next</button>
+                    <!-- <div class="back-btn">
+                        <button class="form2-btn">Back</button>
+                    </div> -->
+                    <div class="next-btn">
+                        <button class="form2-btn">Next</button>
+                    </div>
         </form>
     </div>
 </div>
