@@ -1,3 +1,5 @@
+ 
+
 <section class="main-div" id="into">
     <div class="intro-div">
         <nav class="navbar">
@@ -158,6 +160,7 @@
         </div>
     </div>
 </section>
+
 <section class="footer">
     <div class="footer-box-container">
         <div class="box">
@@ -198,3 +201,26 @@
         </h1>
     </a>
 </section>
+
+<button class="btn btn-lg btn- rounded-circle position-fixed bottom-0 end-0 translate-middle d-none" onclick="scrollToTop()" id="back-to-up">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+
+<script>
+window.onscroll = () => {
+  toggleTopButton();
+}
+function scrollToTop(){
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleTopButton() {
+  if (document.body.scrollTop > 2 ||
+      document.documentElement.scrollTop > 2) {
+    document.getElementById('back-to-up').classList.remove('d-none');
+  } else {
+    document.getElementById('back-to-up').classList.add('d-none');
+  }
+}
+</script>

@@ -4,5 +4,5 @@ class BasicDetail < ApplicationRecord
     validates :email_id, presence: true, length: { minimum: 10, maximum: 255 }, format: { with: VALID_EMAIL_REGEX, message: "Must be a valid Email address" }, uniqueness: { case_senitive: false }
     validates :primary_number, presence: true, length: {minimum: 10, maximum: 10}, uniqueness:true
     validates :alternate_number, presence: true, length: {minimum: 10, maximum: 10}, uniqueness:true
-    validates :date, presence: true
+    validates :dob, presence: true
 end

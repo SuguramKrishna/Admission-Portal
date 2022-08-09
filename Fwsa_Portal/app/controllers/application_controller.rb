@@ -26,4 +26,13 @@ class ApplicationController < ActionController::Base
           nil
         end
       end
+    def admin_user
+      return @admin_user if @admin_user
+      admin_user_id = session[:admin]
+      if admin_user_id
+        @admin_user = admin_user_id
+      else
+        nil
+      end
+    end
 end

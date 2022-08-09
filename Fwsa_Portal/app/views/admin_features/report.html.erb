@@ -1,0 +1,81 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">FWSA Academy</div>
+        <i class="fa-solid fa-bars" id="btn"></i>
+    </div>
+
+    <ul class="nav-list">
+        <li>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-grip"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-id-badge"></i>
+                <span class="links_name">Staffs</span>
+            </a>
+            <span class="tooltip">Staffs</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-image"></i>
+                <span class="links_name">Gallery</span>
+            </a>
+            <span class="tooltip">Gallery</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-bell"></i>
+                <span class="links_name">Notifications</span>
+            </a>
+            <span class="tooltip">Notification</span>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+<div class="report-div">
+    <% @basic_details.each do|basic_detail|%>
+  <% @id = basic_detail.id %>
+  <%@basic_detail = BasicDetail.find_by(id: @id)%>
+  <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: @id)%>
+  <%@educational_detail = EducationalDetail.all.find_by(basic_details_id: @id)%>
+  <%@family_detail = FamilyDetail.all.find_by(basic_details_id: @id)%>
+  <%= @basic_detail.student_name %>
+  <%= @basic_detail.dob%>
+  <%= @basic_detail.gender%>
+  <%= @basic_detail.address%>
+  <%= @basic_detail.primary_number%>
+  <%= @basic_detail.email_id%>
+  <%= @basic_detail.parent_name%>
+  <%= @educational_detail.current_class %>
+  <%= @educational_detail.sslc_completion %>
+  <%= @educational_detail.sslc_total_score %>
+  <%= @educational_detail.sslc_english_score %>
+  <%= @educational_detail.sslc_maths_score %>
+  <%= @educational_detail.higher_education_completion %>
+  <%= @educational_detail.higher_education_total_score %>
+  <%= @educational_detail.higher_education_maths_score %>
+  <%= @educational_detail.higher_education_english_score %>
+  <%= @educational_detail.higher_education_diploma_score %>
+<% end %>
+</div>

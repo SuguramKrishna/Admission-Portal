@@ -1,0 +1,22 @@
+<div class="bg-div">
+    <main class="signin_body">
+
+        <div class="admin_main_container">
+            <div class="login_div">
+                <form action="/admin_signin" method="post">
+                    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+                    <% if flash[:error]%>
+                        <p class="signin_flash_error">
+                            <%= flash[:error]%>
+                        </p>
+                        <%end%>
+    
+                            <input placeholder="Mail ID" type="email" class="signin_email" id="email" name="email"><br>
+                            <input placeholder="Password" type="password" class="signin_password" id="password"
+                                name="password"><br>
+                            <button type="submit" class="signin_button">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

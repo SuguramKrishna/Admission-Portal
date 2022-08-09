@@ -11,19 +11,19 @@
 
 //Upload Box Input Type
 
-input[type="file"] {
-    display: none;
-}
+// input[type="file"] {
+//     display: none;
+// }
 
-.custom-file-upload {
-    background-color: #e7e7e7; 
-    color: black;
-    display: inline-block;
-    cursor: pointer;
-    width: 200px;
-    padding-top: 10px;
-    text-align: center;
-}
+// .custom-file-upload {
+//     background-color: #e7e7e7; 
+//     color: black;
+//     display: inline-block;
+//     cursor: pointer;
+//     width: 200px;
+//     padding-top: 10px;
+//     text-align: center;
+// }
 
 .file-text{
     font-size: 1rem;
@@ -34,6 +34,12 @@ input[type="file"] {
     color: #63bfbf;
 }
 
+.mark{
+  // top: 3px;
+  // right: -3px;
+  background-color: red;
+  color: black;
+}
 
 //Buttons
 

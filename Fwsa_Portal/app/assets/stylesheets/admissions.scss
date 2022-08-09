@@ -43,8 +43,9 @@ section {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 a {
-  color: #f7f7f7 ,; 
+  color: #f7f7f7; 
 } 
 
 a:hover{
@@ -59,7 +60,6 @@ a:hover{
   display: flex;
   justify-content: center;
   height: 30%;
-
 }
 
 .logo {
@@ -92,6 +92,7 @@ a:hover{
 .gallery {
   position: relative;
 }
+
 .dropdown {
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -105,18 +106,22 @@ a:hover{
   border-radius: 8px;
   top: 35px;
 }
+
 .dropdown li + li {
   margin-top: 10px;
 }
+
 .dropdown li {
   padding: 0.5em 1em;
   width: 8em;
   text-align: center;
 }
+
 .dropdown li:hover {
   text-decoration: none;
   color: #63bfbf;
 }
+
 .gallery:hover .dropdown {
   display: block;
 }
@@ -130,6 +135,7 @@ a:hover{
 .admission {
   position: relative;
 }
+
 
 .admission:hover .dropdown {
   display: block;
@@ -383,7 +389,7 @@ input[type="checkbox"] {
 
 .footer .footer-box-container .box a:hover {
   color: gold;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 .footer .footer-box-container i {
@@ -429,6 +435,12 @@ input[type="checkbox"] {
   color: #63bfbf;
   animation: both;
 }
+
+.btn{
+  background-color: #63bfbf;
+  color: white;
+}
+
 
 /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
@@ -493,3 +505,4 @@ input[type="checkbox"] {
     font-weight: 200;
   }
 }
+

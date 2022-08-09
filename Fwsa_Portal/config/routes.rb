@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  get 'admin_features/dashboard'
+  get 'sessions/new'
+  get 'admin_features/gallery_adding', to: "admin_features#gallery_adding"
+  get 'admin_features/staff_adding', to: "admin_features#staff_adding"
+  post "/gallery_add", to: "admin_features#images_attach"
+  post "/staff_add", to: "admin_features#staff_attach"
+  get "/gallery", to: "admin_features#gallery"
+  get "/staff", to: "admin_features#staff"
+  get "/report", to: "admin_features#report"
+  get "admin_features/dashboard"
   get 'refferal_details/refferal'
   get 'family_details/family'
   get 'educational_details/education'
   get 'parent_details/parent'
+  get "/admin_signin", to: "sessions#new"
+  post "/admin_signin", to: "sessions#create"
   # get 'admissions/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -34,4 +44,7 @@ Rails.application.routes.draw do
   #Referral Details Route
   get 'refferal_details/refferal', to: "refferal_details#refferal"
   match 'refferal_details/create', :to => 'refferal_details#create', :via  => :post
+
+  #Dashboard Navigation
+  match 'admin_features/dashboard', :to => 'admin_features#dashboard', :via => :post
 end

@@ -1,12 +1,17 @@
 class BasicDetailsController < ApplicationController
+  @@start = 0
   def basic
     # @basic_details = BasicDetail.all
-
+   if start_returner == 1
     if  current_user != nil
       redirect_to "/educational_details/education"
     else
       render "basic_details/basic"
     end
+  else
+    render "basic_details/basic"
+  end
+  @@start = 0
   end
 
   # def new
@@ -17,6 +22,7 @@ class BasicDetailsController < ApplicationController
     @basic_detail=BasicDetail.new(basic_params)
     if @basic_detail.save
       session[:current_user_id] = @basic_detail.id
+      @@start = 1
       redirect_to "/educational_details/education"
     else
       flash[:error] = @basic_detail.errors.full_messages.join(",")
@@ -24,6 +30,9 @@ class BasicDetailsController < ApplicationController
     end
   end
 
+  def start_returner
+    return @@start
+  end
   private
 
   def basic_params

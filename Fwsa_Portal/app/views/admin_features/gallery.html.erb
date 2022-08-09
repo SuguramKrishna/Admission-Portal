@@ -1,0 +1,6 @@
+<% @gallery.each do |gallery_record|%>
+  <% gallery_record.images.each do|image|%>
+     <%= image_tag image,style: "height: 60px; width: 60px;"%>
+  <% end %>
+<% end %>
+
