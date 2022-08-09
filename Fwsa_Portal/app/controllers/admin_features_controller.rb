@@ -1,7 +1,9 @@
 class AdminFeaturesController < ApplicationController
 
   def dashboard
-
+    @application_count = RefferalDetail.all.length
+    @diploma_count = EducationalDetail.where(current_class: "Diploma").length
+    @college_count = EducationalDetail.where("current_class LIKE?","%Degree Course%").length
   end
   def gallery_adding
     if admin_user

@@ -54,7 +54,7 @@
 
 
 <div class="report-div">
-    <% @basic_details.each do|basic_detail|%>
+  <% @basic_details.each do|basic_detail|%>
   <% @id = basic_detail.id %>
   <%@basic_detail = BasicDetail.find_by(id: @id)%>
   <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: @id)%>
@@ -78,4 +78,8 @@
   <%= @educational_detail.higher_education_english_score %>
   <%= @educational_detail.higher_education_diploma_score %>
 <% end %>
+
+<button>Selected</button>
+<button>Rejected</button>
+<button>Waiting List</button>
 </div>
