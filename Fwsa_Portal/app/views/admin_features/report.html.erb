@@ -60,6 +60,9 @@
   <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: @id)%>
   <%@educational_detail = EducationalDetail.all.find_by(basic_details_id: @id)%>
   <%@family_detail = FamilyDetail.all.find_by(basic_details_id: @id)%>
+
+  <%# Basic Details %>
+
   <%= @basic_detail.student_name %>
   <%= @basic_detail.dob%>
   <%= @basic_detail.gender%>
@@ -67,6 +70,9 @@
   <%= @basic_detail.primary_number%>
   <%= @basic_detail.email_id%>
   <%= @basic_detail.parent_name%>
+
+  <%# Educational details %>
+
   <%= @educational_detail.current_class %>
   <%= @educational_detail.sslc_completion %>
   <%= @educational_detail.sslc_total_score %>
@@ -77,6 +83,32 @@
   <%= @educational_detail.higher_education_maths_score %>
   <%= @educational_detail.higher_education_english_score %>
   <%= @educational_detail.higher_education_diploma_score %>
+
+  <%# Fmaily Details %>
+
+   <%= @family_detail.parent_detail %>
+   <%= @family_detail.mother_qualification %>
+   <%= @family_detail.father_qualification %>
+   <%= @family_detail.mother_occupation %>
+   <%= @family_detail.mother_income %>
+   <%= @family_detail.father_occupation %>
+   <%= @family_detail.father_income %>
+   <%= @family_detail.other_income %>
+   <%= @family_detail.electricity_amount %>
+
+   <%# Referral Details %>
+
+   <%= @refferal_detail.approach %>
+   <%= @refferal_detail.refferal_person_details %>
+   <%= @refferal_detail.refferal_person_name %>
+   <%= @refferal_detail.refferal_person_details %>
+
+
+
+
+
+
+
 <% end %>
 
 <button>Selected</button>
