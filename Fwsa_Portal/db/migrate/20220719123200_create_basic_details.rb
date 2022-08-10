@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBasicDetails < ActiveRecord::Migration[6.1]
   def change
     create_table :basic_details do |t|

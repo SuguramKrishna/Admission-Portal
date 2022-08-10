@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class RefferalDetailsControllerTest < ActionDispatch::IntegrationTest
-  test "should get refferal" do
+  test 'should get refferal' do
     get refferal_details_refferal_url
     assert_response :success
   end
