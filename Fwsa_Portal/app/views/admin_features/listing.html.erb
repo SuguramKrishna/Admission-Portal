@@ -11,7 +11,7 @@
             <span class="tooltip">Search</span>
         </li> -->
         <li>
-            <a href="/admin_features/dashboard" class="active-page">
+            <a href="/admin_features/dashboard">
                 <i class="fa-solid fa-grip"></i>
                 <span class="links_name">Dashboard</span>
             </a>
@@ -25,7 +25,7 @@
             <span class="tooltip">Reports</span>
         </li>
         <li>
-            <a href="/listing">
+            <a href="/listing" class="active-page">
                 <i class="fa-solid fa-list"></i>
                 <span class="links_name">List Applications</span>
             </a>
@@ -40,7 +40,7 @@
             <span class="tooltip">Staffs</span>
         </li>
         <li>
-            <a href="/gallery" class="active-page">
+            <a href="/gallery">
                 <i class="fa-solid fa-image"></i>
                 <span class="links_name">Gallery</span>
             </a>
@@ -49,11 +49,47 @@
     </ul>
 </div>
 
+<div class="listing-div">
+    <div class="title">
+        <i class="fa-solid fa-list"></i>
+        <span class="text">Applications Received</span>
+    </div>
 
-<%= form_with url: "/gallery_add", method: :post do |form| %>
-  <%= form.file_field "images", multiple: true %>
-  <%= form.submit "Submit" %>
-<% end %>
+    <table class="listing-table">
+        <tr class="table_row">
+            <th>Application No</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Email Id</th>
+            <th>Contact No</th>
+            <th>More Details</th>
+        </tr>
+
+        <% BasicDetail.order("id ASC").each do |basic_detail| %>
+            <tr>
+                <td>
+                    <%= basic_detail.id %>
+                </td>
+                <td>
+                    <%= basic_detail.student_name %>
+                </td>
+                <td>
+                    <%= basic_detail.dob %>
+                </td>
+                <td>
+                    <%= basic_detail.email_id %>
+                </td>
+                <td>
+                    <%= basic_detail.primary_number %>
+                </td>
+                <td><a href="/detailed_view/<%=basic_detail.id%>">
+                        <p class="view-link">View</p>
+                    </a></td>
+            </tr>
+            <% end %>
+
+    </table>
+</div>
 
 
 <script>

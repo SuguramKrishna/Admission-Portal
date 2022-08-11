@@ -1,15 +1,10 @@
 <div class="sidebar">
     <div class="logo-details">
-        <%# <div class="logo_name">FWSA Academy</div>
-        <i class="fa-solid fa-bars" id="btn"></i> %>
-         <%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %>
+        <%# <div class="logo_name">FWSA Academy</div> %>
+        <%# <i class="fa-solid fa-bars" id="btn"></i> %>
+        <%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %>
     </div>
     <ul class="nav-list">
-        <!-- <li>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search...">
-            <span class="tooltip">Search</span>
-        </li> -->
         <li>
             <a href="/admin_features/dashboard">
                 <i class="fa-solid fa-grip"></i>
@@ -18,14 +13,14 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="/report" class="active-page">
+            <a href="/report">
                 <i class="fa-solid fa-chart-line"></i>
                 <span class="links_name">Reports</span>
             </a>
             <span class="tooltip">Reports</span>
         </li>
         <li>
-            <a href="/listing">
+            <a href="/listing" class="active-page">
                 <i class="fa-solid fa-list"></i>
                 <span class="links_name">List Applications</span>
             </a>
@@ -53,14 +48,12 @@
 
 
 
-
 <div class="report-div">
-  <% @basic_details.each do|basic_detail|%>
-  <% @id = basic_detail.id %>
-  <%@basic_detail = BasicDetail.find_by(id: @id)%>
-  <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: @id)%>
-  <%@educational_detail = EducationalDetail.all.find_by(basic_details_id: @id)%>
-  <%@family_detail = FamilyDetail.all.find_by(basic_details_id: @id)%>
+  <%if $std_details%>
+  <%@basic_detail = BasicDetail.find_by(id: $std_details["id"])%>
+  <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: $std_details["id"])%>
+  <%@educational_detail = EducationalDetail.all.find_by(basic_details_id: $std_details["id"])%>
+  <%@family_detail = FamilyDetail.all.find_by(basic_details_id: $std_details["id"])%>
 
  
    
@@ -79,7 +72,7 @@
                     <table class="report-table-basics">
                         <tr>
                             <td><p class="report-input-label">Name: <span class="report-input-label-ans"> <%= @basic_detail.student_name %></span></p></td>
-                            <td><p class="report-input-label">DOB: <span class="report-input-label-ans"><%= @basic_detail.dob%></span></p></td>
+                            <td><p class="report-input-label">DOB: <span class="report-input-label-ans"><%= @basic_detail.dob.strftime('%d-%m-%Y')%></span></p></td>
                             <td><p class="report-input-label">Address: <span class="report-input-label-ans">  <%= @basic_detail.address%></span></p></td>
                         </tr>
 
@@ -203,26 +196,21 @@
             </div>
         </div>
     </div>
-
+    <%end%>
 </div>
 
-<% end %>
-
-
-
-</div>
 
 
 
 <script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
-    })
-    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
-    });
+    // let sidebar = document.querySelector(".sidebar");
+    // let closeBtn = document.querySelector("#btn");
+    // closeBtn.addEventListener("click", () => {
+    //     sidebar.classList.toggle("open");
+    //     menuBtnChange();//calling the function(optional)
+    // })
+    // searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+    //     sidebar.classList.toggle("open");
+    //     menuBtnChange(); //calling the function(optional)
+    // });
 </script>

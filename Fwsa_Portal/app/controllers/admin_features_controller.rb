@@ -70,6 +70,22 @@ class AdminFeaturesController < ApplicationController
     end
   end
 
+  def listing
+    if admin_user
+      @basic_details = BasicDetail.all
+      render 'admin_features/listing'
+    else
+      redirect_to '/admin_signin'
+    end
+  end
+
+  def details
+    id = params[:id]
+    get_id = BasicDetail.find_by(id: id)
+    $std_details = get_id
+    redirect_to '/admin_features/detailed_view'
+  end
+
   private
 
   def staff_params
