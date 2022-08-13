@@ -1,6 +1,171 @@
-<% @staffs.each do|staff|%>
-  <%= staff.name %>
-  <%= staff.designation %>
-  <%= staff.experience %>
-  <br>
-<% end %>
+<div class="sidebar">
+  <div class="logo-details">
+    <!-- <div class="logo_name">FWSA Academy</div>
+    <i class="fa-solid fa-bars" id="btn"></i> -->
+    <%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %>
+  </div>
+  <ul class="nav-list">
+    <!-- <li>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li> -->
+    <li>
+      <a href="/admin_features/dashboard">
+        <i class="fa-solid fa-grip"></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a href="/report">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="links_name">Reports</span>
+      </a>
+      <span class="tooltip">Reports</span>
+    </li>
+    <li>
+      <a href="/listing">
+        <i class="fa-solid fa-list"></i>
+        <span class="links_name">List Applications</span>
+      </a>
+      <span class="tooltip">List Application</span>
+    </li>
+    <li>
+      <a href="/staff" class="active-page">
+        <i class="fa-solid fa-id-badge"></i>
+
+        <span class="links_name">Staffs</span>
+      </a>
+      <span class="tooltip">Staffs</span>
+    </li>
+    <li>
+      <a href="/gallery">
+        <i class="fa-solid fa-image"></i>
+        <span class="links_name">Gallery</span>
+      </a>
+      <span class="tooltip">Gallery</span>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="container">
+  <div class="row text-center">
+    <% @staffs.each do|staff|%>
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <%if staff.profile.attached?%>
+         <%= image_tag staff.profile, alt: "Profile Image", class: "profile_img"%>
+         <% end %>
+          <h5 class="mb-0">
+            <%= staff.name %>
+          </h5><span class="small text-uppercase text-muted">
+           <%= staff.designation %>
+          </span>
+          <h3 class="small text-uppercase text-muted">
+           <%= staff.experience %> of Experience
+          </h3>
+          <h3 class="small text-uppercase text-muted"> 
+           <%= staff.phone_number%> 
+          </h3>
+          <h3 class="small text-lowercase text-muted">
+          <%= staff.email_id %>
+          </h3>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
+
+<div class="add-btn-div">
+  <div class="title">
+                <i class="fa-solid fa-id-badge"></i>
+                <span class="text">Staff</span>
+                <button onclick="popupover()" class="add-btn"><i class="fa-solid fa-user-plus"></i></button>
+            </div>
+
+</div>
+
+<div class="popup" id="popup-overlay">
+
+
+  <form action="/staff_add" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div class="staff-main-container">
+
+      <div class="staff-add-card">
+        <div class="cross-icon">
+          <a onclick="crossign()">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+        <section class="staff-add-section">
+          <h1>Adding New Staff</h1>
+        </section>
+        <div class="staff-add-box">
+          <input type="text" name="staff[name]" required><span>Name</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="file" class="custom-file-input" name="staff[profile]"><span>Profile Image</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="text" name="staff[age]" required><span>Age</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="email" name="staff[email_id]" required><span>Email-Id</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="tel" name="staff[phone_number]" required><span>Phone Number</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="text" name="staff[designation]" required><span>Designation</span>
+          <i></i>
+        </div>
+
+        <div class="staff-add-box">
+          <input type="text" name="staff[experience]" required><span>Experience</span>
+          <i></i>
+        </div>
+
+
+        <!-- <div class="staff-add-box">
+          <input type="file" class="custom-file-input" name="aadhar_card_images" multiple="true"><span>Upload Aadhar Card</span>
+          <i></i>
+        </div> -->
+
+
+
+        <button type="submit" class="staff-submit-btn">Add Staff</button>
+      </div>    
+    </div>
+
+  </form>
+
+</div>
+
+
+<script>
+
+
+
+  function popupover() {
+    document.getElementById("popup-overlay").style.display = "block";
+  }
+
+  function crossign() {
+    document.getElementById("popup-overlay").style.display = "none";
+  }
+
+</script>

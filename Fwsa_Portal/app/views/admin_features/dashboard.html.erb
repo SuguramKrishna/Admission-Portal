@@ -65,7 +65,7 @@
                 <div class="box">
                     <i class="fa-solid fa-circle-check"></i>
                     <span class="text">Total No Of Students Selected</span>
-                    <span class="number">87</span>
+                    <span class="number"><%= @selected%></span>
                 </div>
                 <div class="box">
                     <i class="fa-solid fa-user-graduate"></i>
@@ -105,22 +105,10 @@
                     <td><%= basic_detail.dob.strftime('%d-%m-%Y') %></td>
                     <td><%= basic_detail.email_id %></td> 
                     <td><%= basic_detail.primary_number %></td>
-                    <td><a href="/admin_features/<%=basic_detail.id%>"><p class="view-link">View</p></a></td>
+                    <td><a href="/detailed_view/<%=basic_detail.id%>"><p class="view-link">View</p></a></td>
                 </tr>
             <% end %>
 
         </table>
         </div>
 </section>
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
-    })
-    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
-    });
-</script>

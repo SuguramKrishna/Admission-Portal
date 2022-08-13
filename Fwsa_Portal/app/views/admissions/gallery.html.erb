@@ -1,0 +1,196 @@
+<nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo_div">
+        <%= image_tag('fw_logo.png', {class: 'fw_logo' }) %>
+            <a href="/admissions/index" class="logo">FWSA</a>
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- NAVIGATION MENUS -->
+        <div class="menu"> 
+            <li><a href="/admissions/index">Home</a></li>
+            <li><a href="/admissions/staff">Staff</a></li>
+            <li class="gallery"><a href="#">Admission</a>
+                <!-- DROPDOWN MENU -->
+                <ul class="dropdown">
+                    <li><a href="/basic_details/basic">Apply Now </a></li>
+                    <li><a href="/">Check Status</a></li>
+                </ul>
+            </li>
+            <li class="gallery">
+                <a href="/admissions/gallery">Gallery</a>
+                <!-- DROPDOWN MENU -->
+                <%# <ul class="dropdown">
+                    <li><a href="/">Batch 1 </a></li>
+                    <li><a href="/">Batch 2</a></li>
+                    <li><a href="/">Batch 3</a></li>
+                    <li><a href="/">Admission</a></li>
+                </ul> %>
+            </li>
+            <li class="faq">
+                <a href="/admission/faq">FAQ</a>
+            </li>
+            <li><a href="/admission/contact">Contact</a></li>
+        </div>
+    </ul>
+</nav>
+
+<div class="admission-gallery-main-div">
+    <div class="admission-gallery-listing">
+        <% @gallery.each do |gallery_record|%>
+            <% gallery_record.images.each do|image|%>
+                <%= image_tag image%>
+                    <% end %>
+                        <% end %>
+    </div>
+</div>
+
+
+
+<style>
+    html {
+        width: 100%;
+        height: 100%;
+        font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
+    }
+
+    body {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(45deg, rgba(255, 255, 255, 1) 52%, rgba(236, 236, 236, 1) 56%);
+    }
+
+
+
+
+    /* NAVBAR STYLING STARTS */
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    a {
+        color: black !important;
+    }
+
+    a:hover {
+        border: none;
+        color: white;
+        border-bottom: 2px solid #63bfbf;
+    }
+
+
+
+    .logo_div {
+        display: flex;
+        justify-content: center;
+        height: 30%;
+
+    }
+
+    .logo {
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 0%;
+    }
+
+    .fw_logo {
+        width: 75px;
+        height: 50px;
+    }
+
+    /* NAVBAR MENU */
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .menu li:hover {
+        text-decoration: none;
+        color: #63bfbf;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+
+    .menu li {
+        padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .gallery {
+        position: relative;
+    }
+
+    .dropdown {
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+    }
+
+    .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+    }
+
+    .dropdown li:hover {
+        text-decoration: none;
+        color: #63bfbf;
+    }
+
+    .gallery:hover .dropdown {
+        display: block;
+    }
+
+    .faq {
+        position: relative;
+    }
+
+
+
+    .admission {
+        position: relative;
+    }
+
+    .admission:hover .dropdown {
+        display: block;
+    }
+
+    /* CHECKBOX HACK */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+</style>x

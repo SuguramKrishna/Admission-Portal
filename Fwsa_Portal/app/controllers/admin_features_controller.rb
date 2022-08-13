@@ -5,6 +5,7 @@ class AdminFeaturesController < ApplicationController
     @application_count = RefferalDetail.all.length
     @diploma_count = EducationalDetail.where(current_class: 'Diploma').length
     @college_count = EducationalDetail.where('current_class LIKE?', '%Degree Course%').length
+    @selected = Status.where(status: 1).length
   end
 
   def gallery_adding
@@ -24,8 +25,9 @@ class AdminFeaturesController < ApplicationController
   end
 
   def staff_attach
+    @staffs = Staff.all
     staff = Staff.new(staff_params)
-    staff.aadhar_card_images.attach(params[:aadhar_card_images])
+    staff.profile.attach(staff_params[:profile])
     if staff.save
       render plain: 'Success'
     else
@@ -34,9 +36,9 @@ class AdminFeaturesController < ApplicationController
   end
 
   def images_attach
-    gallery = Gallery.new
-    gallery.images.attach(params[:images])
-    if gallery.save
+    @gallery = Gallery.new
+    @gallery.images.attach(params[:images])
+    if @gallery.save
       render plain: 'Success'
     else
       render plain: 'Failed'
@@ -89,7 +91,6 @@ class AdminFeaturesController < ApplicationController
   private
 
   def staff_params
-    params.require(:staff).permit(:name, :designation, :experience, :phone_number, :email_id, :age,
-                                  aadhar_card_images: [])
+    params.require(:staff).permit(:name, :profile, :designation, :experience, :phone_number, :email_id, :age)
   end
 end

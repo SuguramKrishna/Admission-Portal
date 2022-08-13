@@ -444,6 +444,30 @@ input[type="checkbox"] {
 }
 
 
+//Gallery Page
+
+.admission-gallery-listing {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  margin-left: 78px;
+  margin-right: 78px;
+  margin-top:   5%;
+  position: absolute;
+}
+
+.admission-gallery-listing img{
+  width: 25%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 8px;
+  padding: 0 4px;
+  border-radius: 10px;
+}
+
 /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
   .bg-image {

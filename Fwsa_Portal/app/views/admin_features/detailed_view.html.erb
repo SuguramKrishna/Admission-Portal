@@ -181,17 +181,22 @@
                     </div>
 
                     <table class="report-btns">
+                        <form action="/statuses" method="post">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                        <input type="hidden" name="basic_detail_id" value=<%= @basic_detail.id %>>
+                        
                         <tr>
                             <td>
-                                <button class="select-btn" value="1">Select</button>
+                                <button class="select-btn" value=1 name="status" onclick="this.form.submit()">Select</button>
                             </td>
                             <td>
-                                <button class="reject-btn" value="2">Reject</button>
+                                <button class="reject-btn" value=2 name="status" onclick="this.form.submit()">Reject</button>
                             </td>
                             <td>
-                                <button class="waiting-btn" value="3">Waiting List</button>
+                                <button class="waiting-btn" value=3 name="status" onclick="this.form.submit()">Waiting List</button>
                             </td>
                         </tr>
+                    </form>
                     </table>
             </div>
         </div>
@@ -202,15 +207,3 @@
 
 
 
-<script>
-    // let sidebar = document.querySelector(".sidebar");
-    // let closeBtn = document.querySelector("#btn");
-    // closeBtn.addEventListener("click", () => {
-    //     sidebar.classList.toggle("open");
-    //     menuBtnChange();//calling the function(optional)
-    // })
-    // searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-    //     sidebar.classList.toggle("open");
-    //     menuBtnChange(); //calling the function(optional)
-    // });
-</script>
