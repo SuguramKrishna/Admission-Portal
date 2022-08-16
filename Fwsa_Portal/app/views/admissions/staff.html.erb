@@ -18,7 +18,7 @@
                 <!-- DROPDOWN MENU -->
                 <ul class="dropdown">
                     <li><a href="/basic_details/basic">Apply Now </a></li>
-                    <li><a href="/">Check Status</a></li>
+                      <li><a href="/admissions/search">Check Status</a></li>
                 </ul>
             </li>
             <li class="gallery">
@@ -32,43 +32,48 @@
                 </ul> %>
             </li>
             <li class="faq">
-                <a href="/admission/faq">FAQ</a>
+                <a href="/admissions/faq">FAQ</a>
             </li>
-            <li><a href="/admission/contact">Contact</a></li>
         </div>
     </ul>
 </nav>
 
+<div class="user-title">
+    <h4 class="page-title">
+        Our Staffs
+    </h4>
+</div>
 
-
-<div class="container">
-    <div class="row text-center">
-      <% @staffs.each do|staff|%>
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4">
-          <%if staff.profile.attached?%>
-           <%= image_tag staff.profile, alt: "Profile Image", class: "profile_img"%>
-           <% end %>
-            <h5 class="mb-0">
-              <%= staff.name %>
-            </h5><span class="small text-uppercase text-muted">
-             <%= staff.designation %>
-            </span>
-            <h3 class="small text-uppercase text-muted">
-             <%= staff.experience %> of Experience
-            </h3>
-            <h3 class="small text-uppercase text-muted"> 
-             <%= staff.phone_number%> 
-            </h3>
-            <h3 class="small text-lowercase text-muted">
-            <%= staff.email_id %>
-            </h3>
-          </div>
+<div class="staff-listing-main">
+    <div class="container">
+        <div class="row text-center">
+          <% @staffs.each do|staff|%>
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                    <%if staff.profile.attached?%>
+                    <%= image_tag staff.profile, alt: "Profile Image", class: "profile_img"%>
+                    <% end %>
+                    <h5 class="mb-0">
+                        <%= staff.name %>
+                    </h5><span class="small text-uppercase text-muted">
+                        <%= staff.designation %>
+                    </span>
+                          <h3 class="small text-uppercase text-muted">
+                           <%= staff.experience %> of Experience
+                          </h3>
+                          <h3 class="small text-uppercase text-muted"> 
+                           <%= staff.phone_number%> 
+                          </h3>
+                          <h3 class="small text-lowercase text-muted">
+                          <%= staff.email_id %>
+                          </h3>
+                </div>
+            </div>
+            <% end %>
         </div>
-        <% end %>
     </div>
-  </div>
-  
+</div>
+
 
 <style>
     html {
@@ -76,13 +81,6 @@
         height: 100%;
         font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
     }
-
-    body {
-        background: rgb(255, 255, 255);
-        background: linear-gradient(45deg, rgba(255, 255, 255, 1) 52%, rgba(236, 236, 236, 1) 56%);
-    }
-
-
 
 
     /* NAVBAR STYLING STARTS */

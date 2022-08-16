@@ -29,7 +29,7 @@ class AdminFeaturesController < ApplicationController
     staff = Staff.new(staff_params)
     staff.profile.attach(staff_params[:profile])
     if staff.save
-      render plain: 'Success'
+      render 'admin_features/staff'
     else
       render plain: 'Failed'
     end
@@ -39,7 +39,7 @@ class AdminFeaturesController < ApplicationController
     @gallery = Gallery.new
     @gallery.images.attach(params[:images])
     if @gallery.save
-      render plain: 'Success'
+      render 'admin_features/gallery'
     else
       render plain: 'Failed'
     end
@@ -64,6 +64,16 @@ class AdminFeaturesController < ApplicationController
   end
 
   def report
+    # @data_keys = [
+    #   'January',
+    #   'February',
+    #   'March',
+    #   'April',
+    #   'May',
+    #   'June',
+    # ]
+    # @data_values = [0, 10, 5, 2, 20, 30, 45]
+
     if admin_user
       @basic_details = BasicDetail.all
       render 'admin_features/report'

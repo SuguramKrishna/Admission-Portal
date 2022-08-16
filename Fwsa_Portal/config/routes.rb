@@ -30,8 +30,9 @@ Rails.application.routes.draw do
   get 'admissions/staff'
   get 'basic_details/basic'
   get 'admissions/gallery'
-  get 'admissons/faq'
-  get 'admissons/contact'
+  get 'admissions/faq'
+  get 'admissions/contact'
+  get 'admissions/search'
 
   # Basic Details Route
   get 'basic_details/basic', to: 'basic_details#basic'
