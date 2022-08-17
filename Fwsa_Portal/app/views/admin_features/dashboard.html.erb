@@ -1,16 +1,18 @@
 <div class="sidebar">
     <div class="logo-details">
-        <div class="logo_name">FWSA Academy</div>
-        <i class="fa-solid fa-bars" id="btn"></i>
+        <!-- <div class="logo_name">FWSA Academy</div>
+        <i class="fa-solid fa-bars" id="btn"></i> -->
+        <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+        
     </div>
     <ul class="nav-list">
-        <li>
+        <!-- <li>
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Search...">
             <span class="tooltip">Search</span>
-        </li>
+        </li> -->
         <li>
-            <a href="#" class="active-page">
+            <a href="/admin_features/dashboard" class="active-page">
                 <i class="fa-solid fa-grip"></i>
                 <span class="links_name">Dashboard</span>
             </a>
@@ -24,25 +26,26 @@
             <span class="tooltip">Reports</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/listing">
+                <i class="fa-solid fa-list"></i>
+                <span class="links_name">List Applications</span>
+            </a>
+            <span class="tooltip">List Application</span>
+        </li>
+        <li>
+            <a href="/staff">
                 <i class="fa-solid fa-id-badge"></i>
+
                 <span class="links_name">Staffs</span>
             </a>
             <span class="tooltip">Staffs</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/gallery">
                 <i class="fa-solid fa-image"></i>
                 <span class="links_name">Gallery</span>
             </a>
             <span class="tooltip">Gallery</span>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-bell"></i>
-                <span class="links_name">Notifications</span>
-            </a>
-            <span class="tooltip">Notification</span>
         </li>
     </ul>
 </div>
@@ -63,22 +66,29 @@
                 <div class="box">
                     <i class="fa-solid fa-circle-check"></i>
                     <span class="text">Total No Of Students Selected</span>
-                    <span class="number">87</span>
+                    <span class="number"><%= @selected%></span>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-gears"></i>
+                    <i class="fa-solid fa-user-graduate"></i>
                     <span class="text">Total No Of Diploma Applicants</span>
                     <span class="number"><%=@diploma_count%></span>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-user-graduate"></i>
+                    <i class="fa-solid fa-building-columns"></i>
                     <span class="text">Total No of Students Studying In College</span>
                     <span class="number"><%= @college_count %></span>
                 </div>
             </div>
         </div>
+
+
         <!-- Recent Activity -->
         <div class="recent-div">
+            <div class="title">
+                <i class="fa-solid fa-grip"></i>
+                <span class="text">Recently Applied</span>
+            </div>
+
         <table class="recent_activity">
             <tr class="table_row">
                 <th>Application No</th>
@@ -93,25 +103,13 @@
                 <tr>
                     <td><%= basic_detail.id %></td>
                     <td><%= basic_detail.student_name %></td>
-                    <td><%= basic_detail.dob %></td>
+                    <td><%= basic_detail.dob.strftime('%d-%m-%Y') %></td>
                     <td><%= basic_detail.email_id %></td> 
                     <td><%= basic_detail.primary_number %></td>
-                    <td><a href="/admin_features/<%=basic_detail.id%>"><button>View</button></a></td>
+                    <td><a href="/detailed_view/<%=basic_detail.id%>"><p class="view-link">View</p></a></td>
                 </tr>
             <% end %>
 
         </table>
         </div>
 </section>
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
-    })
-    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
-        sidebar.classList.toggle("open");
-        menuBtnChange(); //calling the function(optional)
-    });
-</script>

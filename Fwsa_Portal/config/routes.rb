@@ -9,26 +9,30 @@ Rails.application.routes.draw do
   get '/gallery', to: 'admin_features#gallery'
   get '/staff', to: 'admin_features#staff'
   get '/report', to: 'admin_features#report'
+  get '/listing', to: 'admin_features#listing'
   get 'admin_features/dashboard'
   get 'refferal_details/refferal'
   get 'family_details/family'
   get 'educational_details/education'
   get 'parent_details/parent'
+  get 'admin_features/detailed_view'
+  get '/detailed_view/:id', to: 'admin_features#details'
   get '/admin_signin', to: 'sessions#new'
   post '/admin_signin', to: 'sessions#create'
+
+  resources :statuses
+
   # get 'admissions/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Home Page Routes
   root 'admissions#index'
-  # get 'admissions/staff'
-  # get 'basic_details/basic'
-  # get 'admissions/gallery'
-  # get 'admissons/batch1'
-  # get 'admissons/batch2'
-  # get 'admissons/batch3'
-  # get 'admissons/faq'
-  # get 'admissons/contact'
+  get 'admissions/staff'
+  get 'basic_details/basic'
+  get 'admissions/gallery'
+  get 'admissions/faq'
+  get 'admissions/contact'
+  get 'admissions/search'
 
   # Basic Details Route
   get 'basic_details/basic', to: 'basic_details#basic'

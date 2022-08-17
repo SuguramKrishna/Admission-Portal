@@ -7,9 +7,22 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import Chart from 'chart.js/auto';
+import "chartkick/chart.js"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
+document.addEventListener('turbolinks:load', () => {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: JSON.parse(ctx.canvas.dataset.labels),
+        datasets: [{
+            data: JSON.parse(ctx.canvas.dataset.data),
+        }]
+    },
+    });
+})

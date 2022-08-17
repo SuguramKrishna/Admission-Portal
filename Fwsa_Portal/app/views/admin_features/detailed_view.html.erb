@@ -1,0 +1,209 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <%# <div class="logo_name">FWSA Academy</div> %>
+        <%# <i class="fa-solid fa-bars" id="btn"></i> %>
+        <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="/admin_features/dashboard">
+                <i class="fa-solid fa-grip"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="/report">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a href="/listing" class="active-page">
+                <i class="fa-solid fa-list"></i>
+                <span class="links_name">List Applications</span>
+            </a>
+            <span class="tooltip">List Application</span>
+        </li>
+        <li>
+            <a href="/staff">
+                <i class="fa-solid fa-id-badge"></i>
+
+                <span class="links_name">Staffs</span>
+            </a>
+            <span class="tooltip">Staffs</span>
+        </li>
+        <li>
+            <a href="/gallery">
+                <i class="fa-solid fa-image"></i>
+                <span class="links_name">Gallery</span>
+            </a>
+            <span class="tooltip">Gallery</span>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="report-div">
+  <%if $std_details%>
+  <%@basic_detail = BasicDetail.find_by(id: $std_details["id"])%>
+  <%@refferal_detail = RefferalDetail.all.find_by(basic_details_id: $std_details["id"])%>
+  <%@educational_detail = EducationalDetail.all.find_by(basic_details_id: $std_details["id"])%>
+  <%@family_detail = FamilyDetail.all.find_by(basic_details_id: $std_details["id"])%>
+
+ 
+   
+ <div class="report-main-div">
+        <div class="report-details">
+            <div class="app-no">
+                <p class="app-no-p">Application Number <span class="app-no-span"><%= @basic_detail.id %></span></p>
+                 <hr>
+            </div>
+
+            <div class="report-basic-details">
+              
+
+                <div class="report-details-input">
+                    
+                    <table class="report-table-basics">
+                        <tr>
+                            <td><p class="report-input-label">Name: <span class="report-input-label-ans"> <%= @basic_detail.student_name %></span></p></td>
+                            <td><p class="report-input-label">DOB: <span class="report-input-label-ans"><%= @basic_detail.dob.strftime('%d-%m-%Y')%></span></p></td>
+                            <td><p class="report-input-label">Address: <span class="report-input-label-ans">  <%= @basic_detail.address%></span></p></td>
+                        </tr>
+
+                        <tr>
+                           <td><p class="report-input-label">Gender: <span class="report-input-label-ans"><%= @basic_detail.gender%></span></p></td>
+                           <td><p class="report-input-label">Parent Name: <span class="report-input-label-ans"><%= @basic_detail.parent_name%></span></p></td>
+                           <td><p class="report-input-label">Parent Relation: <span class="report-input-label-ans">  <%= @basic_detail.parent_relation%></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">Primary Number: <span class="report-input-label-ans"><%= @basic_detail.primary_number%></span></p></td>
+                            <td><p class="report-input-label">Alternate Number: <span class="report-input-label-ans"><%= @basic_detail.alternate_number%></span></p></td>
+                            <td><p class="report-input-label">Email Id: <span class="report-input-label-ans"><%= @basic_detail.email_id%></span></p></td>
+                        </tr>
+                    </table>     
+                    <hr>
+
+                    <div class="report-heading">
+                        <p class="report-title">Educational Details</p>
+                    </div>
+
+                    <table class="report-table-education">
+                        <tr>
+                            <td><p class="report-input-label">Current Class: <span class="report-input-label-ans"><%= @educational_detail.current_class %></span></p></td>
+                        </tr>
+
+                        <tr>
+                           <td><p class="report-input-label">10th Completion Year: <span class="report-input-label-ans"><%= @educational_detail.sslc_completion %></span></p></td>
+                           <td><p class="report-input-label">12th Completion Year: <span class="report-input-label-ans"><%= @educational_detail.higher_education_completion %></span></p></td>
+                           <td><p class="report-input-label">Diploma Mark: <span class="report-input-label-ans"><%= @educational_detail.higher_education_diploma_score %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">10th Total Marks: <span class="report-input-label-ans"><%= @educational_detail.sslc_total_score %></span></p></td>
+                            <td><p class="report-input-label">12th Total Marks: <span class="report-input-label-ans"><%= @educational_detail.higher_education_total_score %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">10th English Mark: <span class="report-input-label-ans"><%= @educational_detail.sslc_english_score %></span></p></td>
+                            <td><p class="report-input-label">12th English Mark: <span class="report-input-label-ans"><%= @educational_detail.higher_education_english_score %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">10th Math Mark: <span class="report-input-label-ans"><%= @educational_detail.sslc_maths_score %></span></p></td>
+                            <td><p class="report-input-label">12th Math Mark: <span class="report-input-label-ans"><%= @educational_detail.higher_education_maths_score %></span></p></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p class="report-input-label">12th Computer Mark: <span class="report-input-label-ans"><%= @educational_detail.higher_education_computer_score %></span></p></td>
+                        </tr>
+                    </table>
+
+                    <hr>
+
+                    <div class="report-heading">
+                        <p class="report-title">Family Details</p>
+                    </div>
+
+                    <table class="report-table-family">
+                        <tr>
+                            <td><p class="report-input-label">Parent Details: <span class="report-input-label-ans"><%= @family_detail.parent_detail %></span></p></td>
+                            <td><p class="report-input-label">Other Income Sources: <span class="report-input-label-ans"><%= @family_detail.other_income %></span></p></td>
+                            <td><p class="report-input-label">Last Electricity Bill Amount: <span class="report-input-label-ans"><%= @family_detail.electricity_amount %></span></p></td>
+                        </tr>
+
+                        <tr>
+                           <td><p class="report-input-label">Mother's Qualification: <span class="report-input-label-ans"><%= @family_detail.mother_qualification %></span></p></td>
+                           <td><p class="report-input-label">Mother's Occupation: <span class="report-input-label-ans"><%= @family_detail.mother_occupation %></span></p></td>
+                           <td><p class="report-input-label">Mother's Income: <span class="report-input-label-ans"><%= @family_detail.mother_income %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">Father's Qualification: <span class="report-input-label-ans"><%= @family_detail.father_qualification %></span></p></td>
+                            <td><p class="report-input-label">Father's Occupation: <span class="report-input-label-ans"><%= @family_detail.father_occupation %></span></p></td>
+                            <td><p class="report-input-label">Father's Income: <span class="report-input-label-ans"><%= @family_detail.father_income %></span></p></td>
+                        </tr>
+                    </table>
+
+                    <hr>
+
+                    <div class="report-heading">
+                        <p class="report-title">Referral Details</p>
+                    </div>
+
+                    <table class="report-table-referral">
+                        <tr>
+                            <td><p class="report-input-label">Way of knowing: <span class="report-input-label-ans"><%= @refferal_detail.approach %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">Referral Person Name: <span class="report-input-label-ans"><%= @refferal_detail.refferal_person_name %></span></p></td>
+                            <td><p class="report-input-label">Referral Person Detail: <span class="report-input-label-ans"><%= @refferal_detail.refferal_person_details %></span></p></td>
+                            <td><p class="report-input-label">Referral Person Number: <span class="report-input-label-ans"><%= @refferal_detail.refferal_person_number %></span></p></td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="report-input-label">Referral Person Relationship: <span class="report-input-label-ans"><%= @refferal_detail.refferal_person_relationship%></span></p></td>
+                            <td><p class="report-input-label">Additional Details: <span class="report-input-label-ans"><%= @refferal_detail.additional_information%></span></p></td>
+                        </tr>
+                    </table>
+
+                    <hr>
+
+                    <div class="report-heading">
+                        <p class="report-title">Applicant Status</p>
+                    </div>
+
+                    <table class="report-btns">
+                        <form action="/statuses" method="post">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                        <input type="hidden" name="basic_detail_id" value=<%= @basic_detail.id %>>
+                        
+                        <tr>
+                            <td>
+                                <button class="select-btn" value=1 name="status" onclick="this.form.submit()">Select</button>
+                            </td>
+                            <td>
+                                <button class="reject-btn" value=2 name="status" onclick="this.form.submit()">Reject</button>
+                            </td>
+                            <td>
+                                <button class="waiting-btn" value=3 name="status" onclick="this.form.submit()">Waiting List</button>
+                            </td>
+                        </tr>
+                    </form>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <%end%>
+</div>
+
+
+
+

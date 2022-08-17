@@ -1,0 +1,106 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <%# <div class="logo_name">FWSA Academy</div>
+        <i class="fa-solid fa-bars" id="btn"></i> %>
+         <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+    </div>
+    <ul class="nav-list">
+        <!-- <li>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li> -->
+        <li>
+            <a href="/admin_features/dashboard">
+                <i class="fa-solid fa-grip"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="/report">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a href="/listing" class="active-page">
+                <i class="fa-solid fa-list"></i>
+                <span class="links_name">List Applications</span>
+            </a>
+            <span class="tooltip">List Application</span>
+        </li>
+        <li>
+            <a href="/staff">
+                <i class="fa-solid fa-id-badge"></i>
+
+                <span class="links_name">Staffs</span>
+            </a>
+            <span class="tooltip">Staffs</span>
+        </li>
+        <li>
+            <a href="/gallery">
+                <i class="fa-solid fa-image"></i>
+                <span class="links_name">Gallery</span>
+            </a>
+            <span class="tooltip">Gallery</span>
+        </li>
+    </ul>
+</div>
+
+<div class="listing-div">
+    <div class="title">
+        <i class="fa-solid fa-list"></i>
+        <span class="text">Applications Received</span>
+    </div>
+
+    <table class="listing-table">
+        <tr class="table_row">
+            <th>Application No</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Email Id</th>
+            <th>Contact No</th>
+            <th>More Details</th>
+        </tr>
+
+        <% BasicDetail.order("id ASC").each do |basic_detail| %>
+            <tr>
+                <td>
+                    <%= basic_detail.id %>
+                </td>
+                <td>
+                    <%= basic_detail.student_name %>
+                </td>
+                <td>
+                    <%= basic_detail.dob %>
+                </td>
+                <td>
+                    <%= basic_detail.email_id %>
+                </td>
+                <td>
+                    <%= basic_detail.primary_number %>
+                </td>
+                <td><a href="/detailed_view/<%=basic_detail.id%>">
+                        <p class="view-link">View</p>
+                    </a></td>
+            </tr>
+            <% end %>
+
+    </table>
+</div>
+
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+    })
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
+</script>

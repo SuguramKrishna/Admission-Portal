@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_806_094_241) do
+ActiveRecord::Schema.define(version: 20_220_812_071_726) do
   create_table 'active_storage_attachments', charset: 'utf8mb4', collation: 'utf8mb4_0900_ai_ci', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'record_type', null: false
@@ -127,11 +127,20 @@ ActiveRecord::Schema.define(version: 20_220_806_094_241) do
     t.binary 'aadhar_card_images'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.binary 'profile'
   end
 
-  add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
+  create_table 'statuses', charset: 'utf8mb4', collation: 'utf8mb4_0900_ai_ci', force: :cascade do |t|
+    t.integer 'status'
+    t.bigint 'basic_detail_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['basic_detail_id'], name: 'index_statuses_on_basic_detail_id'
+  end
+
   add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'educational_details', 'basic_details', column: 'basic_details_id'
   add_foreign_key 'family_details', 'basic_details', column: 'basic_details_id'
   add_foreign_key 'refferal_details', 'basic_details', column: 'basic_details_id'
+  add_foreign_key 'statuses', 'basic_details'
 end

@@ -1,6 +1,110 @@
-<% @gallery.each do |gallery_record|%>
-  <% gallery_record.images.each do|image|%>
-     <%= image_tag image,style: "height: 60px; width: 60px;"%>
-  <% end %>
-<% end %>
+<div class="sidebar">
+  <div class="logo-details">
+    <!-- <div class="logo_name">FWSA Academy</div>
+    <i class="fa-solid fa-bars" id="btn"></i> -->
+    <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+  </div>
+  <ul class="nav-list">
+    <!-- <li>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li> -->
+    <li>
+      <a href="/admin_features/dashboard">
+        <i class="fa-solid fa-grip"></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a href="/report">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="links_name">Reports</span>
+      </a>
+      <span class="tooltip">Reports</span>
+    </li>
+    <li>
+      <a href="/listing">
+        <i class="fa-solid fa-list"></i>
+        <span class="links_name">List Applications</span>
+      </a>
+      <span class="tooltip">List Application</span>
+    </li>
+    <li>
+      <a href="/staff" >
+        <i class="fa-solid fa-id-badge"></i>
 
+        <span class="links_name">Staffs</span>
+      </a>
+      <span class="tooltip">Staffs</span>
+    </li>
+    <li>
+      <a href="/gallery" class="active-page">
+        <i class="fa-solid fa-image"></i>
+        <span class="links_name">Gallery</span>
+      </a>
+      <span class="tooltip">Gallery</span>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="gallery-listing-main-div">
+  <div class="gallery-listing">
+    <% @gallery.each do |gallery_record|%>
+  <% gallery_record.images.each do|image|%>
+    <%= image_tag image%>
+    <% end %>
+  <% end %> 
+  </div>
+</div>
+
+
+<div class="add-btn-div">
+  <div class="title">
+    <i class="fa-solid fa-image"></i>
+                <span class="text">Gallery</span>
+                <button onclick="popupover()" class="gallery-add-btn"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+</div>
+
+<div class="popup" id="popup-overlay">
+
+
+<form action="/gallery_add" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <div class="gallery-adding-center"> 
+    <div class="gallery-adding-title">
+      <h4>
+        Add One or More Image To Upload 
+      </h4>
+      <span class="cross-symbol">
+        <a onclick="crossign()">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </span>
+    </div>
+    <div class="gallery-adding-file">
+      <label for="images" class="gallery-adding-upload"><i class="fa-solid fa-file-image"></i></label> 
+      <input type="file" id="images" name="images" class="gallery-adding-input" multiple="true">
+    </div>
+  </div>
+  <button type="submit" class="gallery-submit-btn">Upload Image</button>
+</form>
+
+<script>
+
+
+
+  function popupover() {
+    document.getElementById("popup-overlay").style.display = "block";
+  }
+
+  function crossign() {
+    document.getElementById("popup-overlay").style.display = "none";
+  }
+
+</script>
