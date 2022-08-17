@@ -1,8 +1,11 @@
 <div class="bg-div">
+<%= image_tag('fw-bw.jpg',class: "bg-img") %>
     <main class="signin_body">
-
         <div class="admin_main_container">
             <div class="login_div">
+            <h4 class="admin-title">
+                Admin Login
+            </h4>
                 <form action="/admin_signin" method="post">
                     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
                     <% if flash[:error]%>
@@ -11,10 +14,10 @@
                         </p>
                         <%end%>
     
-                            <input placeholder="Mail ID" type="email" class="signin_email" id="email" name="email"><br>
-                            <input placeholder="Password" type="password" class="signin_password" id="password"
-                                name="password"><br>
-                            <button type="submit" class="signin_button">Sign in</button>
+                        <input placeholder="Admin Username" type="email" class="signin_email" id="email" name="email"><br>
+                        <input placeholder="Admin Password" type="password" class="signin_password" id="password"
+                            name="password"><br>
+                        <button type="submit" class="signin_button">Login</button>
                 </form>
             </div>
         </div>
