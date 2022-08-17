@@ -2,10 +2,16 @@
 
 class AdminFeaturesController < ApplicationController
   def dashboard
-    @application_count = RefferalDetail.all.length
-    @diploma_count = EducationalDetail.where(current_class: 'Diploma').length
-    @college_count = EducationalDetail.where('current_class LIKE?', '%Degree Course%').length
-    @selected = Status.where(status: 1).length
+    if admin_user
+      @application_count = RefferalDetail.all.length
+      @diploma_count = EducationalDetail.where(current_class: 'Diploma').length
+      @college_count = EducationalDetail.where('current_class LIKE?', '%Degree Course%').length
+      @selected = Status.where(status: 1).length
+      render 'admin_features/dashboard'
+
+    else
+      redirect_to '/admin_signin'
+    end
   end
 
   def gallery_adding
@@ -64,16 +70,6 @@ class AdminFeaturesController < ApplicationController
   end
 
   def report
-    # @data_keys = [
-    #   'January',
-    #   'February',
-    #   'March',
-    #   'April',
-    #   'May',
-    #   'June',
-    # ]
-    # @data_values = [0, 10, 5, 2, 20, 30, 45]
-
     if admin_user
       @basic_details = BasicDetail.all
       render 'admin_features/report'
