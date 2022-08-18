@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get 'admin_features/detailed_view'
   get '/detailed_view/:id', to: 'admin_features#details'
   get '/admin_signin', to: 'sessions#new'
-  post '/admin_signin', to: 'sessions#create'
+  post '/admin_signin', to: 'sessions#admin_login', as: :admin_session
+  delete '/signout', to: 'sessions#destroy'
+  get '/searched', to: 'admissions#search_by_mail'
 
   resources :statuses
 
@@ -32,7 +34,7 @@ Rails.application.routes.draw do
   get 'admissions/gallery'
   get 'admissions/faq'
   get 'admissions/contact'
-  get 'admissions/search'
+  get 'admissions/search', to: 'admissions#search'
 
   # Basic Details Route
   get 'basic_details/basic', to: 'basic_details#basic'

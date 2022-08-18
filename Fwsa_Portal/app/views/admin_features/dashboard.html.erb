@@ -47,6 +47,13 @@
             </a>
             <span class="tooltip">Gallery</span>
         </li>
+        <li>
+         <a href="/signout" data-method="delete">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="links_name">Logout</span>
+            </a>
+            <span class="tooltip">Logout</span>
+        </li>
     </ul>
 </div>
 <!-- <section class="home-section"> -->
@@ -57,6 +64,16 @@
                 <i class="fa-solid fa-grip"></i>
                 <span class="text">Dashboard</span>
             </div>
+
+            <div  id="alert-id">
+                <% if flash[:error] %>
+                <div class="alert alert-primary">
+                  <%= flash[:error] %>
+               </div>
+               <% end %>
+            </div>
+              
+
             <div class="boxes">
                 <div class="box">
                     <i class="fa-solid fa-clipboard-list"></i>
@@ -109,7 +126,18 @@
                     <td><a href="/detailed_view/<%=basic_detail.id%>"><p class="view-link">View</p></a></td>
                 </tr>
             <% end %>
-
         </table>
         </div>
 </section>
+
+
+<script>
+  $(document).ready(function(){
+    console.log("workingn")
+    setTimeout(function(){
+      $('#alert-id').fadeOut("slow", function(){
+        $(this).remove();
+      })
+    },2000);
+  });
+</script>

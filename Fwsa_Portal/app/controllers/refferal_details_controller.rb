@@ -12,7 +12,7 @@ class RefferalDetailsController < ApplicationController
       session[:current_user_id] = nil
       session[:educational] = false
       session[:family] = false
-      render plain: 'Success'
+      render '/admissions/search'
     else
       flash[:error] = @refferal_detail.errors.full_messages.join(',')
     end
