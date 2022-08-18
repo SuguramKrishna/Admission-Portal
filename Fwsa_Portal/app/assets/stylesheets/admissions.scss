@@ -487,6 +487,29 @@ input[type="checkbox"] {
   float: left;
 }
 
+.result-div{
+  position: absolute;
+  margin-top: 25%;
+  text-align: center;
+  width: 100%;
+}
+
+.result_title{
+  color: #63bfbf;
+  font-size: 2rem;
+}
+
+.result-p{
+  color: black;
+  font-size: 2rem;
+}
+
+.result-p span{
+  color: #63bfbf;
+}
+
+
+
 // Footer
 
 .footer_img {
@@ -552,6 +575,16 @@ input[type="checkbox"] {
 
 .footer .credit span {
   color: rgb(99, 191, 191);
+}
+
+.admin_link{
+  margin-left: 42%;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.admin_link a{
+  color: #63bfbf ;
 }
 
 // Buttons
@@ -629,8 +662,6 @@ text-align: center;
 .staff-listing-main{
   position: absolute;
   margin-top: 10%;
-  margin-left: 2%;
-  margin-right: 2%;
   width: 100%;
 }
 /* APPLYING MEDIA QUERIES */

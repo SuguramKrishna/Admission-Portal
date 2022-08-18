@@ -11,20 +11,47 @@ class AdmissionsController < ApplicationController
 
   def search
     @searched = searched_returner
-    @email = email_returner
-    @booking_detail_exist = BasicDetail
-    @@searched = 0
-    @@email = nil
   end
 
   def staff
-    @staffs = Staff.all if admin_user
+    @staffs = Staff.all
+
+    # render 'staff'
   end
 
   def search_by_mail
-    @@searched = 1
-    @@email = params[:email]
-    redirect_to 'admissions/search'
+    # @@searched = 1
+    # @@email = params[:email]
+    # @searched =  searched_returner
+    # p @searched
+    # @email = email_returner
+    # p @email
+    # @booking_detail_exist = BasicDetail.all
+    # @bd = nil
+    # BasicDetail.all.each do |bd|
+    #   if bd.email_id == @email
+    #       @bd = bd.id
+    #       break
+    #   end
+    # end
+    # @sd = nil
+    # if @bd != nil
+    #   Status.all.each do |status|
+    #     if status.basic_detail_id == @bd
+    #       @sd = status.status
+    #     end
+    #   end
+    # end
+    # @@searched = 0
+    # @@email = nil
+    email = params[:email]
+    @bd = BasicDetail.find_by(email_id: email)
+    if @bd
+      $sd = Status.find_by(basic_detail_id: @bd.id)
+      p "status : #{$sd.status}"
+      p "id : #{$sd.id}"
+      render 'admissions/search'
+    end
   end
 
   def searched_returner

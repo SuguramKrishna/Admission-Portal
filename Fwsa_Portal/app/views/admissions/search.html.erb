@@ -44,15 +44,37 @@
     <h3>Check Your Applciation Status Here</h3>
     <form action="/searched" method="get">
     <div class="search-box">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
         <input class="search-txt" type="text" placeholder="Enter Your Registered Mail Id" name= "email" autofocus>
-        <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </form>
 </div>
 
-<% if @searched == 1 %>
-     <% if  %>
-<% end %>
+<div class="result-div">
+    <% if @bd == nil %>
+      <p class="result_title">
+        Enter Your Email Address In the Search Box
+      </p>
+    <% else %>
+       <%if $sd%>
+        <%case $sd.status%>
+        <% when 1%>
+         <p class="result-p">You have been <span>Selected</span> </p>
+         <% when 2%>
+          <p class="result-p">You have been <span>Rejected</span></p>
+         <%when 3%>
+        <p class="result-p"> You have been <span>Wait Listed</span></p>
+         <%else%>
+         <%end%>
+       <% else %>
+         <p class="result-p">
+            Your Status is not yet Updated
+         </p>
+       <% end %>
+     <% end %>
+
+</div>
 
 
 

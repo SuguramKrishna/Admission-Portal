@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+# p session[:current_user_id]
+# @@admin_user = Admin.find(session[:current_user_id])
 class AdminFeaturesController < ApplicationController
   def dashboard
-    if admin_user
+    if session[:current_user_id]
       @application_count = RefferalDetail.all.length
       @diploma_count = EducationalDetail.where(current_class: 'Diploma').length
       @college_count = EducationalDetail.where('current_class LIKE?', '%Degree Course%').length
@@ -15,7 +17,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def gallery_adding
-    if admin_user
+    if session[:current_user_id]
       render 'admin_features/gallery_adding'
     else
       redirect_to '/admin_signin'
@@ -23,7 +25,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def staff_adding
-    if admin_user
+    if session[:current_user_id]
       render 'admin_features/staff_adding'
     else
       redirect_to '/admin_signin'
@@ -52,7 +54,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def gallery
-    if admin_user
+    if session[:current_user_id]
       @gallery = Gallery.all
       render 'admin_features/gallery'
     else
@@ -61,7 +63,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def staff
-    if admin_user
+    if session[:current_user_id]
       @staffs = Staff.all
       render 'admin_features/staff'
     else
@@ -70,7 +72,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def report
-    if admin_user
+    if session[:current_user_id]
       @basic_details = BasicDetail.all
       render 'admin_features/report'
     else
@@ -79,7 +81,7 @@ class AdminFeaturesController < ApplicationController
   end
 
   def listing
-    if admin_user
+    if session[:current_user_id]
       @basic_details = BasicDetail.all
       render 'admin_features/listing'
     else
