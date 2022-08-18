@@ -96,6 +96,16 @@ class AdminFeaturesController < ApplicationController
     redirect_to '/admin_features/detailed_view'
   end
 
+  def edit
+    id = params[:id]
+    p id
+    @staff = Staff.find(id.to_i)
+    # $staff.each do |t|
+    #   p t.name
+    # end
+    render 'staff'
+  end
+
   private
 
   def staff_params

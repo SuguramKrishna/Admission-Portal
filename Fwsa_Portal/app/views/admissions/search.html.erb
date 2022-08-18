@@ -42,37 +42,37 @@
 
 <div class="search-main-container">
     <h3>Check Your Applciation Status Here</h3>
-    <form action="/searched" method="get">
+    <form action="/searched" >
     <div class="search-box">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
         <input class="search-txt" type="text" placeholder="Enter Your Registered Mail Id" name= "email" autofocus>
-        <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" class="search-btn" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </form>
 </div>
 
-<div class="result-div">
+<div class="result-div" id="result-div">
     <% if @bd == nil %>
       <p class="result_title">
-        Enter Your Email Address In the Search Box
+        Not Registered
       </p>
     <% else %>
-       <%if $sd%>
-        <%case $sd.status%>
-        <% when 1%>
-         <p class="result-p">You have been <span>Selected</span> </p>
-         <% when 2%>
-          <p class="result-p">You have been <span>Rejected</span></p>
-         <%when 3%>
-        <p class="result-p"> You have been <span>Wait Listed</span></p>
-         <%else%>
-         <%end%>
+        <%if $sd%>
+           <%case $sd.status%>
+           <% when 1%>
+              <p class="result-p">You have been <span>Selected</span> </p>
+           <% when 2%>
+               <p class="result-p">You have been <span>Rejected</span></p>
+            <%when 3%>
+                <p class="result-p"> You have been <span>Wait Listed</span></p>
+            <%end%>
        <% else %>
          <p class="result-p">
             Your Status is not yet Updated
          </p>
        <% end %>
      <% end %>
+     
 
 </div>
 
@@ -208,3 +208,17 @@
       user-select: none;
   }
 </style>
+
+
+
+<script>
+
+    // const searchbttn = document.getElementById("search-btn");
+
+    // searchbttn.addEventListener("click", function(){
+    //     setTimeout (function (){
+    //         document.getElementById("result-div").style.display = "block";
+    //     },2000)
+    // });
+
+</script>

@@ -142,7 +142,7 @@
                             </td>
                             <td>
                                 <input type="text" name="family_detail[mother_occupation]"
-                                    placeholder="Mother's Occupation" required>
+                                    placeholder="Mother's Occupation" required pattern="[A-Za-z ,N/A, n/a]+">
                             </td>
                         </tr>
                         </tr>
@@ -154,18 +154,18 @@
                             </td>
                             <td>
                                 <input type="text" name="family_detail[mother_income]"
-                                    placeholder="Mother's Income" required>
+                                    placeholder="Mother's Income" pattern="[0-9,N/A, n/a]+" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p class="input-name">Father's Occupation <span class="required-star">* </span><span
-                                        class="mention-span">(e.g. Home Maker/Tailor/Driver/Coolie/Unemployed) - Mark
+                                        class="mention-span">(e.g.Tailor/Driver/Coolie/Unemployed) - Mark
                                         "N/A" if Not Applicable</span></p>
                             </td>
                             <td>
                                 <input type="text" name="family_detail[father_occupation]"
-                                    placeholder="Father's Occupation" required>
+                                    placeholder="Father's Occupation" required pattern="[A-Za-z, N/A, n/a]+">
                             </td>
                         </tr>
                         <tr>
@@ -176,7 +176,7 @@
                             </td>
                             <td>
                                 <input type="text" name="family_detail[father_income]"
-                                    placeholder="Father's Income" required>
+                                    placeholder="Father's Income" required pattern="[0-9,N/A, n/a]+">
                             </td>
                         </tr>
                         <tr>
@@ -187,7 +187,7 @@
                             </td>
                             <td>
                                 <input type="text" name="family_detail[other_income]"
-                                    placeholder="Other Income" required>
+                                    placeholder="Other Income" required pattern="[0-9,N/A, n/a]+">
                             </td>
                         </tr>
                         <tr>

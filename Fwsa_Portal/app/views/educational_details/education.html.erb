@@ -115,7 +115,7 @@
                                 <p class="input-name">10th Year of Completion <span class="required-star">*</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[sslc_completion]" placeholder="Completion Year" required>
+                                <input type="text" name="educational_detail[sslc_completion]" placeholder="Completion Year" pattern="[0-9]+" minlength="4" required>
                             </td>
                         </tr>
                         <tr>
@@ -125,7 +125,7 @@
                                             applicable</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[sslc_maths_score]" placeholder="Math Score" required>
+                                <input type="text" name="educational_detail[sslc_maths_score]" placeholder="Math Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -135,7 +135,7 @@
                                         class="mention-span">Mention 'N/A' if not applicable</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[sslc_english_score]" placeholder="English Score" required>
+                                <input type="text" name="educational_detail[sslc_english_score]" placeholder="English Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -146,7 +146,7 @@
                                 </p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[sslc_total_score]" placeholder="Total Score" required>
+                                <input type="text" name="educational_detail[sslc_total_score]" placeholder="Total Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +155,7 @@
                                         class="required-star">*</span></p>
                             </td>
                             <td>
-                                <select name="educational_detail[sslc_school_medium]" required placeholder="-Select Your Gender-">
+                                <select name="educational_detail[sslc_school_medium]"  required placeholder="-Select Your Gender-">
                                     <option value="" disabled selected hidden>-Select-</option>
                                     <option value="Tamil">
                                         <p class="input-option">Tamil</p>
@@ -204,7 +204,7 @@
                                         class="required-star">*</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_completion]" placeholder="Completion Year" required>
+                                <input type="text" name="educational_detail[higher_education_completion]" placeholder="Completion Year" pattern="[0-9]+" minlength="4" required>
                             </td>
                         </tr>
                         <tr>
@@ -214,7 +214,7 @@
                                         case of 12th other streams/Diploma, mention 'N/A'</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_maths_score]" placeholder="Math Score" required>
+                                <input type="text" name="educational_detail[higher_education_maths_score]" placeholder="Math Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -224,7 +224,7 @@
                                         case of Tamil Medium/Diploma, mention 'N/A'</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_english_score]" placeholder="English Score" required>
+                                <input type="text" name="educational_detail[higher_education_english_score]" placeholder="English Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -235,7 +235,7 @@
                                         'N/A'</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_computer_score]" placeholder="Computer Score" required>
+                                <input type="text" name="educational_detail[higher_education_computer_score]" placeholder="Computer Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -247,7 +247,7 @@
                                 </p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_total_score]" placeholder="Total Score" required>
+                                <input type="text" name="educational_detail[higher_education_total_score]" placeholder="Total Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
@@ -258,7 +258,7 @@
                                 </p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[higher_education_diploma_score]" placeholder="Total Score" required>
+                                <input type="text" name="educational_detail[higher_education_diploma_score]" placeholder="Total Score" pattern="[0-9, N/A, n/a]+" maxlength="7" required>
                             </td>
                         </tr>
                         <tr>
