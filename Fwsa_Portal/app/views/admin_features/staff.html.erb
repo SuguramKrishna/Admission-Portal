@@ -60,9 +60,12 @@
 
 <div class="container">
   <div class="row text-center">
+     
     <% Staff.all.each do|staff|%>
       <div class="col-xl-3 col-sm-6 mb-5">
+
         <div class="bg-white rounded shadow-sm py-5 px-4">
+        
         <%if staff.profile.attached?%>
          <%= image_tag staff.profile, alt: "Profile Image", class: "profile_img"%>
          <% end %>
@@ -96,9 +99,9 @@
 </div>
 
 <div class="popup" id="popup-overlay">
+<% if @staff = nil%>
 
-
-  <form action="/staff_add" method="post" enctype="multipart/form-data">
+  <form action="/staff_add" method="post" enctype="multipart/form-data" class="input-form">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <div class="staff-main-container">
 
@@ -159,8 +162,12 @@
     </div>
 
   </form>
+<%else%>
+    
+  <%end%>
 
 </div>
+
 
 
 <script>

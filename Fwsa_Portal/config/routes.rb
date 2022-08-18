@@ -55,4 +55,5 @@ Rails.application.routes.draw do
 
   # Dashboard Navigation
   match 'admin_features/dashboard', to: 'admin_features#dashboard', via: :post
+  match 'edit/:id', to: 'admin_features#edit', via: :get
 end

@@ -46,12 +46,18 @@ class AdmissionsController < ApplicationController
     # @@email = nil
     email = params[:email]
     @bd = BasicDetail.find_by(email_id: email)
+    p '00000000'
     if @bd
       $sd = Status.find_by(basic_detail_id: @bd.id)
-      p "status : #{$sd.status}"
-      p "id : #{$sd.id}"
-      render 'admissions/search'
+      if $sd
+        p "status : #{$sd.status}"
+        p "id : #{$sd.id}"
+      end
+    else
+      # flash[:error] = "Not registered"
+
     end
+    render 'search'
   end
 
   def searched_returner
