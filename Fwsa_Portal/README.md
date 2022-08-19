@@ -1,27 +1,83 @@
-# README
+# **```FWSA ACADEMY PORTAL```**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Admission and Admin Portal
 
-Things you may want to cover:
+### Project Configurations
 
-* Ruby version
+* Ruby version used - 2.6.1
 
-* System dependencies
+* Rails version used - 6.1.6
 
-* Configuration
+* Database used - MySql
 
-* Database creation
+### Important Links Of The Project
 
-* Database initialization
+* Heroku link: https://fwsa-academy.herokuapp.com/
 
-* How to run the test suite
+* Sonarcloud link: https://sonarcloud.io/project/overview?id=SuguramKrishna_Admission-Portal
 
-* Services (job queues, cache servers, search engines, etc.)
+* PPT link: 
 
-* Deployment instructions
+### Gems Used In The Project
 
-* ...
+* Rubocop
+
+* Chartkick
+
+* Groupdate
+
+* Email_Validator
+
+### What is FWSA ACADEMY AND ADMIN PORTAL
+
+The FWSA Admission Portal and FWSA Admin Portal are created to make the applicants who are coming to apply for Freshworks Software Academy(FWSA) to fill their application form on the same portal from where they get to know about the FWSA Academy and to make the work of the FWSA Admin Team easy by giving them some Reports and Detailed View of the candidates who have applied with the Graph and Reports.
+
+There are two user personas in the project namely __Candidate(FWSA ACADEMY PORTAL)__ and __Admin(FWSA ADMIN PORTAL)__ 
+
+### Features Of FWSA Academy Portal
+
+#### Filling the Application form and storing it in the Database (Candidate) - Completed fully
+
+* Candidates can apply for the FWSA ACADEMY by filling the form
+* There are Four Forms to apply for the FWSA Academy 
+* All The Form are Validated
+* One candidate can only use one Email Address
+* Phone Number should be Unique
+* Age should be bettween Jan 1, 2002 to Dec 31, 2005
+* All the fields are mandatory
+
+#### Tracking the Application (Candidate) - Completed 95%
+
+* Candidate can Track the status of his application using the applied Email Address
+
+#### Dashborad (Admin) - Completed fully
+
+* Admin gets some important mathematical details fetched from the database using the application received from the Candidates
+
+#### Reports (Admin) - Completed fully
+
+* This page is a graphical representation of the Gender, Current Class, Referral Detail, and  Applications received by time from the applciant
+
+#### Listing the Applicant Detail (Admin) - Completed fully
+
+*  The received applications are listed here detailly with all the information of the student.
+
+#### Selecting the Student (Admin) - Completed fully
+
+* The admin can Select, Reject or Wait List the candidate form the same page named List Application.
+
+#### Adding Staffs (Admin) - Completed fully
+
+* The admin can add Staffs to the webportal 
+
+#### Adding Gallery (Admin) - Completed fully
+
+* The admin can add Images to the Gallery page of the webportal 
 
 
-# DEV
+
+
+
+
+
+
