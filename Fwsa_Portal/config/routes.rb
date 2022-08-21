@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get 'parent_details/parent'
   get 'admin_features/detailed_view'
   get '/detailed_view/:id', to: 'admin_features#details'
-  get '/admin_signin', to: 'sessions#new'
+  get '/admin_signin', to: 'sessions#new', as: :admin_signin
   post '/admin_signin', to: 'sessions#admin_login', as: :admin_session
   delete '/signout', to: 'sessions#destroy'
-  get '/searched', to: 'admissions#search_by_mail'
+  get '/searched  ', to: 'admissions#search_by_mail'
 
   resources :statuses
 

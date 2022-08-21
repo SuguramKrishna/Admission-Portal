@@ -12,7 +12,7 @@ class AdminFeaturesController < ApplicationController
       render 'admin_features/dashboard'
 
     else
-      redirect_to '/admin_signin'
+      redirect_to admin_signin_path
     end
   end
 
@@ -20,7 +20,7 @@ class AdminFeaturesController < ApplicationController
     if session[:current_user_id]
       render 'admin_features/gallery_adding'
     else
-      redirect_to '/admin_signin'
+      redirect_to admin_signin_path
     end
   end
 
@@ -28,7 +28,7 @@ class AdminFeaturesController < ApplicationController
     if session[:current_user_id]
       render 'admin_features/staff_adding'
     else
-      redirect_to '/admin_signin'
+      redirect_to admin_signin_path
     end
   end
 
@@ -76,7 +76,7 @@ class AdminFeaturesController < ApplicationController
       @basic_details = BasicDetail.all
       render 'admin_features/report'
     else
-      redirect_to '/admin_signin'
+      redirect_to admin_signin_path
     end
   end
 
@@ -85,7 +85,7 @@ class AdminFeaturesController < ApplicationController
       @basic_details = BasicDetail.all
       render 'admin_features/listing'
     else
-      redirect_to '/admin_signin'
+      redirect_to admin_signin_path
     end
   end
 
