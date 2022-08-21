@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class RefferalDetailsController < ApplicationController
-  def refferal; end
+  def refferal
+    # Referral page method
+  end
 
   def create
     current_user

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    # Session page method
+  end
 
   # def create
   #   if (params[:email] == 'fwsa@admission.gmail.com') && (params[:password] == 'FWSA@admin')

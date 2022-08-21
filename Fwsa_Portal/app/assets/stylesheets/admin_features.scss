@@ -64,8 +64,6 @@
   right: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  transition: all 0.4s ease;
-  font-size: 23px;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -75,7 +73,7 @@
   text-align: right;
 }
 
-.sidebar i {
+.sidebar em {
   color: #fff;
   height: 60px;
   min-width: 50px;
@@ -199,12 +197,12 @@
 }
 
 .sidebar li a:hover .links_name,
-.sidebar li a:hover i {
+.sidebar li a:hover em {
   transition: all 0.5s ease;
   color: #63bfbf;
 }
 
-.sidebar li i {
+.sidebar li em {
   height: 50px;
   line-height: 50px;
   font-size: 20px;
@@ -233,7 +231,7 @@
   margin-left: 5%;
 }
 
-.dash-content .title i {
+.dash-content .title em {
   position: relative;
   height: 45px;
   width: 45px;
@@ -276,7 +274,7 @@
   margin-top: 20px;
 }
 
-.boxes .box i {
+.boxes .box em {
   font-size: 40px;
   color: #63bfbf;
   padding: 2%;
@@ -370,7 +368,7 @@ tr {
   margin-left: 5%;
 }
 
-.listing-div .title i {
+.listing-div .title em {
   position: relative;
   height: 45px;
   width: 45px;
@@ -612,7 +610,7 @@ button {
   font-size: 0.8em;
 }
 
-.staff-add-box i {
+.staff-add-box em {
   position: absolute;
   width: 100%;
   height: 2px;
@@ -622,7 +620,7 @@ button {
   overflow: hidden;
 }
 
-.staff-add-box i::before {
+.staff-add-box em::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -645,8 +643,8 @@ button {
   transition: 0.5s;
 }
 
-.staff-add-box input:valid ~ i::before,
-.staff-add-box input:focus ~ i::before {
+.staff-add-box input:valid ~ em::before,
+.staff-add-box input:focus ~ em::before {
   left: 0;
 }
 
@@ -672,8 +670,7 @@ button {
     cursor: pointer;
     font-weight: 100;
     border-radius: 2px;
-    outline: none;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 .custom-file-input:focus {
 	outline: none !important;
@@ -704,7 +701,7 @@ button {
   margin-left: 5%;
 }
 
-.add-btn-div .title i {
+.add-btn-div .title em {
   position: relative;
   height: 45px;
   width: 45px;
@@ -740,7 +737,7 @@ button {
   object-position: center right;
 }
 
-.add-btn i{
+.add-btn em{
   background-color: transparent !important;
   color: #63bfbf !important;
   font-size: 25px !important;
@@ -753,7 +750,7 @@ button {
 }
 
 
-.gallery-add-btn i{
+.gallery-add-btn em{
   background-color: transparent !important;
   color: #63bfbf !important;
   font-size: 2.25rem !important;

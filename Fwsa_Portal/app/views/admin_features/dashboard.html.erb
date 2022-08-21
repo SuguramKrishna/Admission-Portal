@@ -1,40 +1,33 @@
 <div class="sidebar">
     <div class="logo-details">
-        <!-- <div class="logo_name">FWSA Academy</div>
-        <i class="fa-solid fa-bars" id="btn"></i> -->
         <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
         
     </div>
     <ul class="nav-list">
-        <!-- <li>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search...">
-            <span class="tooltip">Search</span>
-        </li> -->
         <li>
             <a href="/admin_features/dashboard" class="active-page">
-                <i class="fa-solid fa-grip"></i>
+                <em class="fa-solid fa-grip"></em>
                 <span class="links_name">Dashboard</span>
             </a>
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
             <a href="/report">
-                <i class="fa-solid fa-chart-line"></i>
+                <em class="fa-solid fa-chart-line"></em>
                 <span class="links_name">Reports</span>
             </a>
             <span class="tooltip">Reports</span>
         </li>
         <li>
             <a href="/listing">
-                <i class="fa-solid fa-list"></i>
+                <em class="fa-solid fa-list"></em>
                 <span class="links_name">List Applications</span>
             </a>
             <span class="tooltip">List Application</span>
         </li>
         <li>
             <a href="/staff">
-                <i class="fa-solid fa-id-badge"></i>
+                <em class="fa-solid fa-id-badge"></em>
 
                 <span class="links_name">Staffs</span>
             </a>
@@ -42,14 +35,14 @@
         </li>
         <li>
             <a href="/gallery">
-                <i class="fa-solid fa-image"></i>
+                <em class="fa-solid fa-image"></em>
                 <span class="links_name">Gallery</span>
             </a>
             <span class="tooltip">Gallery</span>
         </li>
         <li>
          <a href="/signout" data-method="delete">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <em class="fa-solid fa-arrow-right-from-bracket"></em>
                 <span class="links_name">Logout</span>
             </a>
             <span class="tooltip">Logout</span>
@@ -61,7 +54,7 @@
     <div class="dash-content">
         <div class="overview">
             <div class="title">
-                <i class="fa-solid fa-grip"></i>
+                <em class="fa-solid fa-grip"></em>
                 <span class="text">Dashboard</span>
             </div>
 
@@ -76,22 +69,22 @@
 
             <div class="boxes">
                 <div class="box">
-                    <i class="fa-solid fa-clipboard-list"></i>
+                    <em class="fa-solid fa-clipboard-list"></em>
                     <span class="text">Total Application Received</span>
                     <span class="number"><%= @application_count %></span>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-circle-check"></i>
+                    <em class="fa-solid fa-circle-check"></em>
                     <span class="text">Total No Of Students Selected</span>
                     <span class="number"><%= @selected%></span>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-user-graduate"></i>
+                    <em class="fa-solid fa-user-graduate"></em>
                     <span class="text">Total No Of Diploma Applicants</span>
                     <span class="number"><%=@diploma_count%></span>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-building-columns"></i>
+                    <em class="fa-solid fa-building-columns"></em>
                     <span class="text">Total No of Students Studying In College</span>
                     <span class="number"><%= @college_count %></span>
                 </div>
@@ -102,7 +95,7 @@
         <!-- Recent Activity -->
         <div class="recent-div">
             <div class="title">
-                <i class="fa-solid fa-grip"></i>
+                <em class="fa-solid fa-grip"></em>
                 <span class="text">Recently Applied</span>
             </div>
 
