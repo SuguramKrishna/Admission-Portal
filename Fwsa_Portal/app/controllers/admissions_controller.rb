@@ -50,10 +50,10 @@ class AdmissionsController < ApplicationController
     @bd = BasicDetail.find_by(email_id: email)
     p '00000000'
     if @bd
-      @@sd = Status.find_by(basic_detail_id: @bd.id)
+      $sd = Status.find_by(basic_detail_id: @bd.id)
       if $sd
-        p "status : #{@@sd.status}"
-        p "id : #{@@sd.id}"
+        p "status : #{$sd.status}"
+        p "id : #{$sd.id}"
       end
     else
       # flash[:error] = "Not registered"
