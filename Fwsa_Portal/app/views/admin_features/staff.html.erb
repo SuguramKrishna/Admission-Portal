@@ -1,60 +1,55 @@
 <div class="sidebar">
-  <div class="logo-details">
-    <!-- <div class="logo_name">FWSA Academy</div>
-    <i class="fa-solid fa-bars" id="btn"></i> -->
-   <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
-  </div>
-  <ul class="nav-list">
-    <!-- <li>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search...">
-            <span class="tooltip">Search</span>
-        </li> -->
-    <li>
-      <a href="/admin_features/dashboard">
-        <i class="fa-solid fa-grip"></i>
-        <span class="links_name">Dashboard</span>
-      </a>
-      <span class="tooltip">Dashboard</span>
-    </li>
-    <li>
-      <a href="/report">
-        <i class="fa-solid fa-chart-line"></i>
-        <span class="links_name">Reports</span>
-      </a>
-      <span class="tooltip">Reports</span>
-    </li>
-    <li>
-      <a href="/listing">
-        <i class="fa-solid fa-list"></i>
-        <span class="links_name">List Applications</span>
-      </a>
-      <span class="tooltip">List Application</span>
-    </li>
-    <li>
-      <a href="/staff" class="active-page">
-        <i class="fa-solid fa-id-badge"></i>
+    <div class="logo-details">
+        <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+        
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="/admin_features/dashboard">
+                <em class="fa-solid fa-grip"></em>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="/report">
+                <em class="fa-solid fa-chart-line"></em>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a href="/listing">
+                <em class="fa-solid fa-list"></em>
+                <span class="links_name">List Applications</span>
+            </a>
+            <span class="tooltip">List Application</span>
+        </li>
+        <li>
+            <a href="/staff" class="active-page">
+                <em class="fa-solid fa-id-badge"></em>
 
-        <span class="links_name">Staffs</span>
-      </a>
-      <span class="tooltip">Staffs</span>
-    </li>
-    <li>
-      <a href="/gallery">
-        <i class="fa-solid fa-image"></i>
-        <span class="links_name">Gallery</span>
-      </a>
-      <span class="tooltip">Gallery</span>
-    </li>
-       <li>
+                <span class="links_name">Staff</span>
+            </a>
+            <span class="tooltip">Staff</span>
+        </li>
+        <li>
+            <a href="/gallery">
+                <em class="fa-solid fa-image"></em>
+                <span class="links_name">Gallery</span>
+            </a>
+            <span class="tooltip">Gallery</span>
+        </li>
+        <li>
          <a href="/signout" data-method="delete">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <em class="fa-solid fa-arrow-right-from-bracket"></em>
                 <span class="links_name">Logout</span>
             </a>
             <span class="tooltip">Logout</span>
         </li>
-  </ul>
+    </ul>
 </div>
+
 
 
 
@@ -63,9 +58,7 @@
      
     <% Staff.all.each do|staff|%>
       <div class="col-xl-3 col-sm-6 mb-5">
-
         <div class="bg-white rounded shadow-sm py-5 px-4">
-        
         <%if staff.profile.attached?%>
          <%= image_tag staff.profile, alt: "Profile Image", class: "profile_img"%>
          <% end %>
@@ -99,7 +92,7 @@
 </div>
 
 <div class="popup" id="popup-overlay">
-<% if @staff = nil%>
+
 
   <form action="/staff_add" method="post" enctype="multipart/form-data" class="input-form">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
@@ -162,9 +155,7 @@
     </div>
 
   </form>
-<%else%>
-    
-  <%end%>
+
 
 </div>
 
