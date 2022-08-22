@@ -42,7 +42,7 @@
 
 <div class="search-main-container">
     <h3>Check Your Applciation Status Here</h3>
-    <form action="/searched" >
+    <form action="/searched" method="post">
     <div class="search-box">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
         <input class="search-txt" type="text" placeholder="Enter Your Registered Mail Id" name= "email" autofocus>
@@ -57,8 +57,8 @@
         Not Registered
       </p>
     <% else %>
-        <%if @@sd%>
-           <%case @@sd.status%>
+        <%if $sd%>
+           <%case $sd.status%>
            <% when 1%>
               <p class="result-p">You have been <span>Selected</span> </p>
            <% when 2%>

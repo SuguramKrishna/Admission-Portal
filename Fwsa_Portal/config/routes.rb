@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/admin_signin', to: 'sessions#new', as: :admin_signin
   post '/admin_signin', to: 'sessions#admin_login', as: :admin_session
   delete '/signout', to: 'sessions#destroy'
-  get '/searched  ', to: 'admissions#search_by_mail'
+  post '/searched', to: 'admissions#search_by_mail'
 
   resources :statuses
 

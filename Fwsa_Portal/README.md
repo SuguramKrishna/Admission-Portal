@@ -16,7 +16,7 @@
 
 * Sonarcloud link: https://sonarcloud.io/project/overview?id=SuguramKrishna_Admission-Portal
 
-* PPT link: 
+* PPT link: https://drive.google.com/file/d/1268DbX6SgJSe7c1GQOaYPm2ty9u1N5eR/view?usp=sharing
 
 ### Gems Used In The Project
 
