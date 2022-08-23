@@ -49,7 +49,7 @@
             <% if flash[:error]%>
                 <p class="flash-error">
                     <%= flash[:error]%>
-                </p>
+                </p>    
                 <%end%>
                     <table class="form-table">
                     <caption></caption>
@@ -90,7 +90,7 @@
                             <td>
                                 <p class="input-name">10th Standard: School Name<span class="required-star">*</span></p>
                             </td>
-                            <td><input type="text" name="educational_detail[sslc_school_name]" placeholder="School Name" required>
+                            <td><input type="text" name="educational_detail[sslc_school_name]" placeholder="School Name" pattern="^[A-Za-z -]+$" required>
                             </td>
                         </tr>
                         <tr>
@@ -117,7 +117,7 @@
                                 <p class="input-name">10th Year of Completion <span class="required-star">*</span></p>
                             </td>
                             <td>
-                                <input type="text" name="educational_detail[sslc_completion]" placeholder="Completion Year" pattern="[0-9]+" minlength="4" required>
+                                <input type="text" name="educational_detail[sslc_completion]" placeholder="Completion Year" pattern="[0-9]+" minlength="4" maxlength="4" required>
                             </td>
                         </tr>
                         <tr>
@@ -177,7 +177,7 @@
                                         class="required-star">*</span></p>
                             </td>
                             <td><input type="text" name="educational_detail[higher_education_name]" placeholder="School/Institution Name"
-                                    required>
+                                    pattern="^[A-Za-z -]+$" required>
                             </td>
                         </tr>
                         <tr>
