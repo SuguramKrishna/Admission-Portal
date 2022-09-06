@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'admin_features/gallery_adding', to: 'admin_features#gallery_adding'
   get 'admin_features/staff_adding', to: 'admin_features#staff_adding'
+  get 'admin_features/faq_adding', to: 'admin_features#faq_adding'
   post '/gallery_add', to: 'admin_features#images_attach'
   post '/staff_add', to: 'admin_features#staff_attach'
+  post '/faq_add', to: 'admin_features#faq_attach'
   get '/gallery', to: 'admin_features#gallery'
   get '/staff', to: 'admin_features#staff'
   get '/report', to: 'admin_features#report'
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   post '/admin_signin', to: 'sessions#admin_login', as: :admin_session
   delete '/signout', to: 'sessions#destroy'
   post '/searched', to: 'admissions#search_by_mail'
+  get 'admin_features/faq'
 
   resources :statuses
 

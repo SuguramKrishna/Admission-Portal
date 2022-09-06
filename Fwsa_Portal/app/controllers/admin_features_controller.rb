@@ -6,8 +6,8 @@ class AdminFeaturesController < ApplicationController
   def dashboard
     if session[:current_user_id]
       @application_count = RefferalDetail.all.length
-      @diploma_count = EducationalDetail.where(current_class: 'Diploma').length
-      @college_count = EducationalDetail.where('current_class LIKE?', '%Degree Course%').length
+      @diploma_count = EducationalDetail.where(current_class: 'Completed Diploma').length
+      @college_count = EducationalDetail.where('current_class LIKE?', '%#{Degree}%').length
       @selected = Status.where(status: 1).length
       render 'admin_features/dashboard'
 
@@ -17,6 +17,14 @@ class AdminFeaturesController < ApplicationController
   end
 
   def gallery_adding
+    if session[:current_user_id]
+      render 'admin_features/gallery_adding'
+    else
+      redirect_to admin_signin_path
+    end
+  end
+
+  def faq_adding
     if session[:current_user_id]
       render 'admin_features/gallery_adding'
     else
@@ -38,6 +46,16 @@ class AdminFeaturesController < ApplicationController
     staff.profile.attach(staff_params[:profile])
     if staff.save
       render 'admin_features/staff'
+    else
+      render plain: 'Failed'
+    end
+  end
+
+  def faq_attach
+    @faqs = Faq.all
+    faq = Faq.new(faq_params)
+    if faq.save
+      render 'admin_features/faq'
     else
       render plain: 'Failed'
     end
@@ -66,6 +84,15 @@ class AdminFeaturesController < ApplicationController
     if session[:current_user_id]
       @staffs = Staff.all
       render 'admin_features/staff'
+    else
+      redirect_to '/admin_signin'
+    end
+  end
+
+  def faq
+    if session[:current_user_id]
+      @faqs = Faq.all
+      render 'admin_features/faq'
     else
       redirect_to '/admin_signin'
     end
@@ -110,5 +137,9 @@ class AdminFeaturesController < ApplicationController
 
   def staff_params
     params.require(:staff).permit(:name, :profile, :designation, :experience, :phone_number, :email_id, :age)
+  end
+
+  def faq_params
+    params.require(:faq).permit(:question, :answer)
   end
 end

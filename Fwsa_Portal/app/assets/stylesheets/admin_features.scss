@@ -648,6 +648,116 @@ button {
   left: 0;
 }
 
+//textarea css
+
+.faq-main-container {
+  font-size: 1rem;
+}
+
+.faq-add-card {
+  position: relative;
+  border: 3px solid #dee2e6;
+  background-color: white;
+  padding: 30px;
+  width: 400px;
+  height: 100%;
+  border-radius: 10px;
+  margin-left: 40%;
+  margin-top: 5%;
+}
+
+.faq-add-section {
+  position: relative;
+  bottom: 18px;
+  border-bottom: 2px dashed #dee2e6;
+}
+
+.faq-add-section h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #63bfbf;
+}
+
+.faq-add-box {
+  position: relative;
+  width: 280px;
+  margin-bottom: 25px;
+}
+
+.faq-add-box textarea {
+  width: 100%;
+  padding: 10px 0 5px;
+  color: #212529;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  background: transparent;
+  box-shadow: none;
+}
+
+.faq-add-box span {
+  position: absolute;
+  left: 0;
+  color: #adb5bd;
+  padding: 10px 0 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.faq-add-box textarea:valid ~ span,
+.faq-add-box textarea:focus ~ span {
+  color: #495057;
+  transform: translatey(-20px);
+  font-size: 0.8em;
+}
+
+.faq-add-box em {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #495057;
+  overflow: hidden;
+}
+
+.faq-add-box em::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    #63bfbf,
+    #f8f9fa,
+    #e9ecef,
+    #dee2e6,
+    #ced4da,
+    #a6dada,
+    #a3d1d1,
+    #90bebe,
+    #83b8b8,
+    #63bfbf
+  );
+  animation: animate 0.9s linear infinite;
+  transition: 0.5s;
+}
+
+.faq-add-box textarea:valid ~ em::before,
+.faq-add-box textarea:focus ~ em::before {
+  left: 0;
+}
+
+.faq-main{
+  margin-left: 5%;
+}
+
+
+
 /*custom inpu file*/
 .custom-file-input {
   color: transparent;
@@ -685,7 +795,6 @@ button {
 
 .add-btn-div{
   position: absolute;
-  min-height: 100vh;
   top: 0;
   left: 78px;
   width: calc(100% - 78px);
@@ -768,6 +877,22 @@ button {
 }
 
 .staff-submit-btn {
+  position: absolute;
+  bottom: -26px;
+  outline: none;
+  border: none;
+  left: 50%;
+  height: 50px;
+  width: 180px;
+  padding: 1rem 1.5rem;
+  color: #ffff;
+  background: #63bfbf;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.faq-submit-btn {
   position: absolute;
   bottom: -26px;
   outline: none;

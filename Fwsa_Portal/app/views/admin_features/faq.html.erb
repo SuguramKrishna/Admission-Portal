@@ -1,0 +1,142 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <a href="/admin_features/dashboard"><%= image_tag('fw_logo.png', {class: 'side_fw_logo' }) %></a>
+        
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="/admin_features/dashboard">
+                <em class="fa-solid fa-grip"></em>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="/report">
+                <em class="fa-solid fa-chart-line"></em>
+                <span class="links_name">Reports</span>
+            </a>
+            <span class="tooltip">Reports</span>
+        </li>
+        <li>
+            <a href="/listing">
+                <em class="fa-solid fa-list"></em>
+                <span class="links_name">List Applications</span>
+            </a>
+            <span class="tooltip">List Application</span>
+        </li>
+        <li>
+            <a href="/staff">
+                <em class="fa-solid fa-id-badge"></em>
+
+                <span class="links_name">Staffs</span>
+            </a>
+            <span class="tooltip">Staffs</span>
+        </li>
+        <li>
+            <a href="/gallery">
+                <em class="fa-solid fa-image" class="active-page"></em>
+                <span class="links_name">Gallery</span>
+            </a>
+            <span class="tooltip">Gallery</span>
+        </li>
+        <li>
+         <a href="#" class="active-page">
+               <em class="fa-regular fa-circle-question"></em>
+                <span class="links_name">FAQ</span>
+            </a>
+            <span class="tooltip">FAQ</span>
+        </li>
+        <li>
+         <a href="/signout" data-method="delete">
+                <em class="fa-solid fa-arrow-right-from-bracket"></em>
+                <span class="links_name">Logout</span>
+            </a>
+            <span class="tooltip">Logout</span>
+        </li>
+    </ul>
+</div>
+
+
+
+<div class="faq-main">
+ <div class="content">
+    <div> 
+    <% Faq.all.each do|faq|%>
+       <input type="checkbox" class="questions" id="question2" name="q" />
+       <div class="plus">+</div>
+       <label class="question" for="question2">  <%= faq.question %> </label>
+       <div class="answers">
+        <%= faq.answer %>
+       </div>
+     <% end %>
+     </div>
+   </div>
+</div>
+ 
+
+
+
+<div class="add-btn-div">
+  <div class="title">
+                <em class="fa-solid fa-id-badge"></em>
+                <span class="text">FAQ</span>
+                <button onclick="popupover()" class="add-btn"><em class="fa-solid fa-user-plus"></em></button>
+            </div>
+</div>
+
+
+<div class="popup" id="popup-overlay">
+
+
+  <form action="/faq_add" method="post" enctype="multipart/form-data" class="input-form">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div class="faq-main-container">
+
+      <div class="faq-add-card">
+        <div class="cross-icon">
+          <a onclick="crossign()">
+            <em class="fa-solid fa-xmark"></em>
+          </a>
+        </div>
+        <section class="faq-add-section">
+          <h1>Adding FAQ</h1>
+        </section>
+
+        <div class="faq-add-box">
+        <label for="textarea"><span>Question</span></label>
+          <textarea type="text" name="faq[question]" required>
+          </textarea>
+          <em></em>
+        </div>
+
+        <div class="faq-add-box">
+            <label for="textarea"><span>Answer</span></label>
+            <textarea type="text" name="faq[answer]" required>
+            </textarea>
+            <em></em>
+        </div>
+
+        <button type="submit" class="faq-submit-btn">Add FAQ</button>
+      </div>    
+    </div>
+
+  </form>
+
+
+</div>
+    
+
+
+<script>
+
+  function popupover() {
+    document.getElementById("popup-overlay").style.display = "block";
+  }
+
+  function crossign() {
+    document.getElementById("popup-overlay").style.display = "none";
+  }
+
+</script>
+
