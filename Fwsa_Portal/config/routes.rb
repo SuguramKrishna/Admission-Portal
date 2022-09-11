@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/gallery', to: 'admin_features#gallery'
   get '/staff', to: 'admin_features#staff'
   get '/report', to: 'admin_features#report'
+  get '/faq', to: 'admin_features#faq'
   get '/listing', to: 'admin_features#listing'
   get 'admin_features/dashboard'
   get 'refferal_details/refferal'
