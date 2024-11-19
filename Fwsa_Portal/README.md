@@ -12,10 +12,6 @@
 
 ### Important Links Of The Project
 
-* Heroku link: https://fwsa-academy.herokuapp.com/
-
-* Sonarcloud link: https://sonarcloud.io/project/overview?id=SuguramKrishna_Admission-Portal
-
 * PPT link: https://drive.google.com/file/d/1R-aQAla1eqjGbZRmXTGJMQx_M2nbWb7H/view?usp=sharing
 
 ### Gems Used In The Project
